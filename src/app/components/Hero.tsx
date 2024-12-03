@@ -46,8 +46,7 @@ const HeroSection = () => {
 
             <Link
               className="block w-full rounded px-12 py-3 text-sm font-medium bg-white text-orange-600 shadow hover:bg-gray-100 hover:text-orange-700 focus:outline-none focus:ring active:bg-gray-200 sm:w-auto"
-              target="_blank"
-              href="/the-gym"
+              href="/le-gym"
             >
               Plus D'Infos
             </Link>

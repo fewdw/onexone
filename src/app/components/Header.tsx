@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <div className="navbar bg-black fixed top-0 left-0 w-full z-50 shadow-md text-white">
       <div className="flex-1">
-        <a className="btn btn-ghost">
+        <Link href="/" className="btn btn-ghost">
           <img src="/logo.jpeg" alt="Logo" className="h-8" />{" "}
           {/* Adjust the height as needed */}
-        </a>
+        </Link>
       </div>
 
       {/* Navigation Menu */}
