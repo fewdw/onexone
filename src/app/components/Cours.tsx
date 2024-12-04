@@ -1,29 +1,28 @@
 import React from "react";
 
-// JSON data for classes
 const classes = [
   {
     name: "Libre",
     description:
-      "Explorez notre espace gym à votre rythme! Accédez à une variété d'équipements, notamment des sacs de frappe, un ring, des haltères, un tapis roulant, un airbike, et bien plus encore. Idéal pour ceux qui veulent se concentrer sur leurs propres objectifs.",
+      "Entraînez-vous à votre rythme avec un accès complet à notre équipement: sacs de frappe, ring, haltères, tapis roulant, airbike, et plus.",
     imageUrl: "libre.jpg",
   },
   {
     name: "Groupe",
     description:
-      "Rejoignez nos séances dynamiques en groupe dirigées par un coach expert! Apprenez les bases de la boxe tout en brûlant des calories et en renforçant votre endurance dans une ambiance motivante et conviviale.",
+      "Participez à des sessions de groupe motivantes et apprenez les bases de la boxe avec un coach expert. Brûlez des calories dans une super ambiance!",
     imageUrl: "groupe.jpg",
   },
   {
     name: "Privé",
     description:
-      "Bénéficiez d'un entraînement sur mesure avec nos coaches experts. Que ce soit en tête-à-tête ou en petit groupe, nous adaptons chaque session à vos besoins pour des progrès rapides et efficaces.",
+      "Profitez d’un coaching personnalisé pour progresser rapidement. En solo ou en petit groupe, les séances sont adaptées à vos objectifs.",
     imageUrl: "prive.jpg",
   },
   {
     name: "Compétition",
     description:
-      "Prenez la boxe au sérieux et préparez-vous à briller dans le ring. Entraînez-vous avec nos coachs spécialisés pour développer vos compétences, votre stratégie et votre mental de gagnant.",
+      "Préparez-vous pour le ring avec nos coachs spécialisés. Améliorez vos techniques, votre stratégie et votre mental de compétiteur.",
     imageUrl: "compe.jpg",
   },
 ];

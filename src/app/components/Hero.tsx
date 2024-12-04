@@ -40,16 +40,15 @@ const HeroSection = () => {
       <div className="relative mx-auto max-w-screen-xl px-4 py-16 lg:flex lg:min-h-screen lg:items-center">
         <div className="mx-auto max-w-xl text-center text-white mt-24 sm:mt-16 lg:mt-0">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
-            ONEXONE.
+            ONEXONE
             <strong className="font-extrabold text-orange-700 block sm:block">
-              Plus qu'une salle de sport.
+              Plus qu'une salle de sport
             </strong>
           </h1>
 
           <p className="mt-4 sm:text-xl/relaxed">
-            Aucune expérience requise — nos cours s'adressent à tous les âges et
-            niveaux. Débutant ou expert, notre équipe vous guidera vers une
-            expérience de boxe inoubliable.
+            Débutant ou expert, nos cours accueillent tous les âges et niveaux.
+            Vivez une expérience de boxe unique avec notre équipe dédiée.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
