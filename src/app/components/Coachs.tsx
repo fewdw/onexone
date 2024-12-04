@@ -33,12 +33,12 @@ const Coachs = () => {
         Notre Équipe
       </h2>
 
-      {/* Grid container with responsive column layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-8 px-4 md:px-8">
+      {/* Grid container for responsive layout */}
+      <div className="grid grid-cols-1 gap-4 py-8 px-4 md:px-8 sm:grid-cols-2 lg:grid-cols-4">
         {coaches.map((coach, index) => (
           <a
             key={index}
-            className="group relative block bg-black flex-shrink-0 sm:w-full sm:h-full"
+            className="group relative block bg-black flex-shrink-0 sm:w-full h-full"
           >
             <img
               alt={coach.name}

@@ -22,10 +22,10 @@ const GymDesc = () => {
 
               <div className="mt-4 md:mt-8">
                 <Link
-                  href="/contact"
+                  href="/cours-horraire"
                   className="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-orange-600 transition focus:outline-none focus:ring focus:ring-yellow-400 hover:text-orange-700"
                 >
-                  S'inscrire
+                  cours et horaires
                 </Link>
               </div>
             </div>
