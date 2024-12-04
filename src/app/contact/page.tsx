@@ -55,21 +55,35 @@ const ContactPage = () => {
               <li className="flex items-start">
                 <div className="text-lg">
                   {daysOfWeek.map((day, index) => (
-                    <p key={index}>
+                    <p
+                      key={index}
+                      className={
+                        index === currentDay
+                          ? "text-orange-500 font-bold"
+                          : "text-white"
+                      }
+                    >
                       <span
                         className={
-                          index === currentDay
-                            ? "text-orange-500 font-bold"
-                            : "text-white"
+                          index === currentDay ? "text-orange-500" : ""
                         }
                       >
                         {day}:
                       </span>{" "}
-                      {index === 0 || index === 1 || index === 2 || index === 3
-                        ? "15h - 21h"
-                        : index === 4
-                        ? "15h - 20h"
-                        : "10h - 15h"}
+                      <span
+                        className={
+                          index === currentDay ? "text-orange-500" : ""
+                        }
+                      >
+                        {index === 0 ||
+                        index === 1 ||
+                        index === 2 ||
+                        index === 3
+                          ? "15h - 21h"
+                          : index === 4
+                          ? "15h - 20h"
+                          : "10h - 15h"}
+                      </span>
                     </p>
                   ))}
                 </div>
