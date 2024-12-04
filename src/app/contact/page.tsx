@@ -29,10 +29,10 @@ const ContactPage = () => {
         <section className="bg-black">
           <div className="p-8 md:p-12 lg:px-16">
             <div className="mx-auto max-w-lg text-center">
-              <h2 className="text-2xl font-bold text-white md:text-3xl mt-1">
-                Venez nous rendre visite et transformez votre forme physique!
-                Appelez-nous pour plus d'infos ou venez découvrir notre salle de
-                sport.
+              <h2 className="text-2xl font-bold text-white md:text-2xl mt-1 text-left">
+                Vous avez des questions? Contactez-nous dès maintenant!
+                Appelez-nous, envoyez-nous un message sur nos réseaux sociaux,
+                ou venez visiter notre salle de sport pour en savoir plus.
               </h2>
             </div>
           </div>
