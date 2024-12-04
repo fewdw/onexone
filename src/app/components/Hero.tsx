@@ -48,7 +48,7 @@ const HeroSection = () => {
 
           <p className="mt-4 sm:text-xl/relaxed">
             Aucune expérience requise — nos cours s'adressent à tous les âges et
-            niveaux. Débutant ou expert, notre équipe te guidera vers une
+            niveaux. Débutant ou expert, notre équipe vous guidera vers une
             expérience de boxe inoubliable.
           </p>
 

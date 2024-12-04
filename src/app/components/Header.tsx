@@ -21,7 +21,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/cours-horraire">Cours et Horraire</Link>
+            <Link href="/horraire-abonnements">Horraire et Abonnements</Link>
           </li>
           <li>
             <Link className="text-white" href="/contact">
@@ -49,7 +49,9 @@ const Header = () => {
                   <Link href="/">Accueil</Link>
                 </li>
                 <li>
-                  <Link href="/cours-horraire">Cours et Horraire</Link>
+                  <Link href="/horraire-abonnements">
+                    Horraire et Abonnements
+                  </Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact</Link>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Horraire = () => {
   const schedule = {
-    lundi: [
+    Lundi: [
       { time: "15H", activity: "LIBRE" },
       { time: "16H", activity: "LIBRE" },
       { time: "17H", activity: "LIBRE" },
@@ -10,7 +10,7 @@ const Horraire = () => {
       { time: "19H", activity: "(GROUPE) INTRO BOXE" },
       { time: "20H", activity: "(GROUPE) COMPÉTITION" },
     ],
-    mardi: [
+    Mardi: [
       { time: "15H", activity: "LIBRE" },
       { time: "16H", activity: "LIBRE" },
       { time: "17H", activity: "LIBRE" },
@@ -18,7 +18,7 @@ const Horraire = () => {
       { time: "19H", activity: "(GROUPE) KICK BOXING" },
       { time: "20H", activity: "(GROUPE) COMPÉTITION" },
     ],
-    mercredi: [
+    Mercredi: [
       { time: "15H", activity: "LIBRE" },
       { time: "16H", activity: "LIBRE" },
       { time: "17H", activity: "LIBRE" },
@@ -26,7 +26,7 @@ const Horraire = () => {
       { time: "19H", activity: "(GROUPE) INTRO BOXE" },
       { time: "20H", activity: "(GROUPE) COMPÉTITION" },
     ],
-    jeudi: [
+    Jeudi: [
       { time: "15H", activity: "LIBRE" },
       { time: "16H", activity: "LIBRE" },
       { time: "17H", activity: "LIBRE" },
@@ -34,21 +34,21 @@ const Horraire = () => {
       { time: "19H", activity: "(GROUPE) KICK BOXING" },
       { time: "20H", activity: "(GROUPE) COMPÉTITION" },
     ],
-    vendredi: [
+    Vendredi: [
       { time: "15H", activity: "LIBRE" },
       { time: "16H", activity: "LIBRE" },
       { time: "17H", activity: "LIBRE" },
       { time: "18H", activity: "(GROUPE) INTRO BOXE" },
       { time: "19H", activity: "LIBRE" },
     ],
-    samedi: [
+    Samedi: [
       { time: "10H", activity: "(GROUPE) KID-BOXING" },
       { time: "11H", activity: "(GROUPE) BOXE HIIT" },
       { time: "12H", activity: "(GROUPE) COMPÉTITION" },
       { time: "13H", activity: "LIBRE" },
       { time: "14H", activity: "LIBRE" },
     ],
-    dimanche: [
+    Dimanche: [
       { time: "10H", activity: "LIBRE" },
       { time: "11H", activity: "LIBRE" },
       { time: "12H", activity: "LIBRE" },
@@ -59,10 +59,10 @@ const Horraire = () => {
 
   return (
     <div>
-      <section className="overflow-hidden bg-black">
+      <section className="overflow-hidden bg-black pt-24">
         <div className="bg-orange-600 p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
           <h2 className="font-bold text-white text-4xl text-center mb-6">
-            L'horraire
+            L'horaire
           </h2>
           <p className="text-center text-lg text-white">
             <span className="block mb-2">Lundi au Jeudi: 15H - 21H</span>
@@ -87,7 +87,9 @@ const Horraire = () => {
                       key={index}
                       className="flex justify-between items-center text-sm text-gray-300"
                     >
-                      <span>{activity.time}</span>
+                      <span className="text-orange-400 font-medium">
+                        {activity.time}
+                      </span>
                       <span className="font-medium text-white">
                         {activity.activity}
                       </span>

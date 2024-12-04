@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import GymDesc from "./components/GymDesc";
 import Coachs from "./components/Coachs";
+import Cours from "./components/Cours";
 
 export default function Home() {
   return (

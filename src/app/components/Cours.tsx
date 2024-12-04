@@ -4,31 +4,34 @@ import React from "react";
 const classes = [
   {
     name: "Libre",
-    description: "Entraînements individuels pour progresser à votre rythme.",
+    description:
+      "Explorez notre espace gym à votre rythme! Accédez à une variété d'équipements, notamment des sacs de frappe, un ring, des haltères, un tapis roulant, un airbike, et bien plus encore. Idéal pour ceux qui veulent se concentrer sur leurs propres objectifs.",
     imageUrl: "libre.jpg",
   },
   {
     name: "Groupe",
-    description: "Séances collectives pour renforcer l'esprit d'équipe.",
+    description:
+      "Rejoignez nos séances dynamiques en groupe dirigées par un coach expert! Apprenez les bases de la boxe tout en brûlant des calories et en renforçant votre endurance dans une ambiance motivante et conviviale.",
     imageUrl: "groupe.jpg",
   },
   {
     name: "Privé",
-    description: "Séances personnalisées pour un entraînement sur mesure.",
+    description:
+      "Bénéficiez d'un entraînement sur mesure avec nos coaches experts. Que ce soit en tête-à-tête ou en petit groupe, nous adaptons chaque session à vos besoins pour des progrès rapides et efficaces.",
     imageUrl: "prive.jpg",
   },
   {
     name: "Compétition",
     description:
-      "Préparez-vous pour des défis et des compétitions de haut niveau.",
+      "Prenez la boxe au sérieux et préparez-vous à briller dans le ring. Entraînez-vous avec nos coachs spécialisés pour développer vos compétences, votre stratégie et votre mental de gagnant.",
     imageUrl: "compe.jpg",
   },
 ];
 
 const Classes = () => {
   return (
-    <div className="bg-black pt-16">
-      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl lg:pt-16">
+    <div className="bg-black pt-4">
+      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
         Nos Cours
       </h2>
 
@@ -37,7 +40,7 @@ const Classes = () => {
         {classes.map((classItem, index) => (
           <a
             key={index}
-            href="#"
+            href=""
             className="group block bg-black flex-shrink-0 rounded-lg overflow-hidden shadow-xl transition"
           >
             <img
