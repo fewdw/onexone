@@ -88,7 +88,7 @@ const CarteDeCours = () => {
                     </span>{" "}
                     <span className="text-sm text-gray-500">{`pour ${
                       option.count
-                    } cours${option.count > 1 ? "s" : ""}`}</span>
+                    } cours${option.count > 1 ? "" : ""}`}</span>
                   </li>
                 );
               })}
