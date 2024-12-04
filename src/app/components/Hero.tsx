@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="mx-auto max-w-xl text-center text-white mt-24 sm:mt-16 lg:mt-0">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             ONEXONE.
-            <strong className="font-extrabold text-orange-700 sm:block">
+            <strong className="font-extrabold text-orange-700 block sm:block">
               Plus qu'une salle de sport.
             </strong>
           </h1>

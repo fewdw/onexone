@@ -30,7 +30,7 @@ const classes = [
 
 const Classes = () => {
   return (
-    <div className="bg-black pt-4">
+    <div className="bg-black pt-8">
       <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
         Nos Cours
       </h2>

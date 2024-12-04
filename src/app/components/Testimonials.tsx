@@ -10,7 +10,7 @@ const Testimonials = () => {
           </h2>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gray-800 p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
@@ -71,7 +71,7 @@ const Testimonials = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gray-800 p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
@@ -132,7 +132,7 @@ const Testimonials = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gray-800 p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
