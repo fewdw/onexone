@@ -62,7 +62,7 @@ const Horraire = () => {
       <section className="overflow-hidden bg-black pt-24">
         <div className="bg-orange-600 p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
           <h2 className="font-bold text-white text-4xl text-center mb-6">
-            L'horraire
+            L'horaire
           </h2>
           <p className="text-center text-lg text-white">
             <span className="block mb-2">Lundi au Jeudi: 15H - 21H</span>
