@@ -14,6 +14,7 @@ export default function Home() {
       <Hero />
       <GymDesc />
       <Coachs />
+      <Cours />
       <Testimonials />
       <Footer />
     </div>

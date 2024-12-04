@@ -10,7 +10,7 @@ const Testimonials = () => {
           </h2>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
@@ -56,13 +56,13 @@ const Testimonials = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-orange-600">
                     SPLAYZ TV
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-white">
                 Je m’entraîne depuis 1 ans à one x one et Je peu dire que c’est
                 le meilleur club de boxe, une superbe ambiance chaleureuse, où
                 tous le monde débutant ou expérimenté trouvera son comble.Les
@@ -71,7 +71,7 @@ const Testimonials = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
@@ -117,13 +117,13 @@ const Testimonials = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-orange-600">
                     PANIZ MIRZAIE
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-white">
                 Je m'entraîne depuis 1 ans à one x one et Je peu dire que c'est
                 le meilleur club de boxe, une superbe ambiance chaleureuse, où
                 tous le monde débutant ou expérimenté trouvera son comble.Les
@@ -132,7 +132,7 @@ const Testimonials = () => {
               </p>
             </blockquote>
 
-            <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <blockquote className="rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black p-6 shadow-sm sm:p-8">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="flex justify-center gap-0.5 text-orange-500">
@@ -178,13 +178,13 @@ const Testimonials = () => {
                     </svg>
                   </div>
 
-                  <p className="mt-0.5 text-lg font-medium text-gray-900">
+                  <p className="mt-0.5 text-lg font-medium text-orange-700">
                     HAFIZ BABAK
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-white">
                 Inscrit à One X One depuis septembre 2021 et j’ai que du positif
                 à dire. Belle ambiance, très bon personnel, l’équipe est très
                 accueillante et professionnelle. Je suis les cours de groupe la

@@ -12,7 +12,6 @@ const page = () => {
     <div className="bg-black">
       <Header></Header>
       <Horraire></Horraire>
-      <Cours />
       <Abonnements></Abonnements>
       <CarteDeCours></CarteDeCours>
       <Footer></Footer>
