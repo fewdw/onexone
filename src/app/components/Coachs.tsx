@@ -29,24 +29,25 @@ const coaches = [
 const Coachs = () => {
   return (
     <div className="bg-black">
-      <h2 className="text-2xl font-bold text-orange-700 md:text-3xl text-center bg-black">
+      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl lg:pt-16">
         Notre Équipe
       </h2>
 
-      <div className="flex flex-wrap justify-center py-8 px-4 md:px-8">
+      {/* Grid container with responsive column layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-8 px-4 md:px-8">
         {coaches.map((coach, index) => (
           <a
             key={index}
-            className="group relative block bg-black flex-shrink-0 w-full sm:w-[300px] md:w-[300px] lg:w-[350px] xl:w-[300px] mx-2 mb-4"
+            className="group relative block bg-black flex-shrink-0 sm:w-full sm:h-full"
           >
             <img
               alt={coach.name}
               src={coach.imageUrl}
-              className="h-full w-full object-cover object-top opacity-75 transition-opacity group-hover:opacity-50"
+              className="h-full w-full object-cover object-top opacity-75 transition-opacity"
               style={{ objectFit: "cover" }}
             />
 
-            <div className="absolute bottom-0 w-full bg-black bg-opacity-70 text-center p-4 transition-opacity group-hover:bg-opacity-90">
+            <div className="absolute bottom-0 w-full bg-black bg-opacity-70 text-center p-4 transition-opacity">
               <p className="text-sm font-large uppercase tracking-widest text-orange-700">
                 {coach.name}
               </p>
