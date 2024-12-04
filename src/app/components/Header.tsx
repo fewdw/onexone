@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="navbar bg-black fixed top-0 left-0 w-full z-50 shadow-md text-white">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost">
+        <Link href="/" className="btn btn-ghost hover:bg-black">
           <img src="/logo.jpeg" alt="Logo" className="h-8" />{" "}
           {/* Adjust the height as needed */}
         </Link>
@@ -21,14 +21,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link className="text-white" href="/le-gym">
-              Le Gym
-            </Link>
-          </li>
-          <li>
-            <Link className="text-white" href="/rates-schedule">
-              Rates And Schedule
-            </Link>
+            <Link href="/cours-horraire">Cours et Horraire</Link>
           </li>
           <li>
             <Link className="text-white" href="/contact">
@@ -53,16 +46,10 @@ const Header = () => {
               <summary className="text-left text-white">Menu</summary>
               <ul className="bg-black text-white rounded-t-none p-2">
                 <li>
-                  <Link href="/">Home</Link>
+                  <Link href="/">Accueil</Link>
                 </li>
                 <li>
-                  <Link href="/le-gym">Le Gym</Link>
-                </li>
-                <li>
-                  <Link href="/services">Services</Link>
-                </li>
-                <li>
-                  <Link href="/rates-schedule">Rates And Schedule</Link>
+                  <Link href="/cours-horraire">Cours et Horraire</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact</Link>

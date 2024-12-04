@@ -1,7 +1,23 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 
 const HeroSection = () => {
+  // Create a ref to target the end of the section
+  const endSectionRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToEnd = () => {
+    if (endSectionRef.current) {
+      if (window.innerWidth <= 768) {
+        // On mobile, scroll further down
+        window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+      } else {
+        // On larger screens, scroll to the section
+        endSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <section className="relative bg-gray-50 h-screen">
       {/* Video Background */}
@@ -44,15 +60,18 @@ const HeroSection = () => {
               S'inscrire
             </a>
 
-            <Link
+            <button
               className="block w-full rounded px-12 py-3 text-sm font-medium bg-white text-orange-600 shadow hover:bg-gray-100 hover:text-orange-700 focus:outline-none focus:ring active:bg-gray-200 sm:w-auto"
-              href="/le-gym"
+              onClick={scrollToEnd}
             >
               Plus D'Infos
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* End of section marker */}
+      <div ref={endSectionRef} className="h-16"></div>
     </section>
   );
 };

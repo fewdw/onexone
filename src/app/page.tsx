@@ -3,12 +3,16 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
+import GymDesc from "./components/GymDesc";
+import Coachs from "./components/Coachs";
 
 export default function Home() {
   return (
     <div className="overflow-hidden bg-black">
       <Header />
       <Hero />
+      <GymDesc />
+      <Coachs />
       <Testimonials />
       <Footer />
     </div>
