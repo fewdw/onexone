@@ -108,7 +108,7 @@ const ContactPage = () => {
           {/* Google Map Embed */}
           <div>
             <h3 className="text-2xl font-semibold text-orange-600 mb-4">
-              Où nous Trouver
+              Où nous trouver
             </h3>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5595.397553838832!2d-73.44700518750551!3d45.47587153253839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc90597ac322293%3A0xcefc3b59e7d0ab25!2sClub%20de%20boxe%20One%20X%20One!5e0!3m2!1sen!2sca!4v1733343441480!5m2!1sen!2sca"
