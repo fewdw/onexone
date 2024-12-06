@@ -30,7 +30,7 @@ const Coachs = () => {
   return (
     <div className="bg-black">
       <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl lg:pt-16">
-        Notre Équipe
+        Nos Entraîneurs
       </h2>
 
       {/* Grid container for responsive layout */}

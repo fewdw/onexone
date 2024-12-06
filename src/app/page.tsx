@@ -13,8 +13,8 @@ export default function Home() {
       <Header />
       <Hero />
       <GymDesc />
-      <Coachs />
       <Cours />
+      <Coachs />
       <Testimonials />
       <Footer />
     </div>

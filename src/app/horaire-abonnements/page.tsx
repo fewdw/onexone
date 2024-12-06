@@ -6,12 +6,13 @@ import Cours from "../components/Cours";
 import Horraire from "../components/Horraire";
 import Abonnements from "../components/Abonnements";
 import CarteDeCours from "../components/CarteDeCours";
+import Horaire2 from "../components/Horaire2";
 
 const page = () => {
   return (
     <div className="bg-black">
       <Header></Header>
-      <Horraire></Horraire>
+      <Horaire2></Horaire2>
       <Abonnements></Abonnements>
       <CarteDeCours></CarteDeCours>
       <Footer></Footer>

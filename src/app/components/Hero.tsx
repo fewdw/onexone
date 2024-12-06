@@ -6,18 +6,6 @@ const HeroSection = () => {
   // Create a ref to target the end of the section
   const endSectionRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollToEnd = () => {
-    if (endSectionRef.current) {
-      if (window.innerWidth <= 768) {
-        // On mobile, scroll further down
-        window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-      } else {
-        // On larger screens, scroll to the section
-        endSectionRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
   return (
     <section className="relative bg-gray-50 h-screen">
       {/* Video Background */}
@@ -46,25 +34,13 @@ const HeroSection = () => {
             </strong>
           </h1>
 
-          <p className="mt-4 sm:text-xl/relaxed">
-            Débutant ou expert, nos cours accueillent tous les âges et niveaux.
-            Vivez une expérience de boxe unique avec notre équipe dédiée.
-          </p>
-
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               className="block w-full rounded bg-orange-700 px-12 py-3 text-sm font-medium text-white shadow hover:bg-orange-800 focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
               href="/contact"
             >
-              S'inscrire
+              Réservez votre essai gratuit
             </a>
-
-            <button
-              className="block w-full rounded px-12 py-3 text-sm font-medium bg-white text-orange-600 shadow hover:bg-gray-100 hover:text-orange-700 focus:outline-none focus:ring active:bg-gray-200 sm:w-auto"
-              onClick={scrollToEnd}
-            >
-              Plus D'Infos
-            </button>
           </div>
         </div>
       </div>

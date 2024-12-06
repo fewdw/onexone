@@ -13,11 +13,11 @@ const GymDesc = () => {
               </h2>
 
               <p className="text-white/90 sm:mt-4 text-left">
-                L'équipe One X One est un centre de boxe complet situé au cœur
-                de la Rive-Sud. Reconnue pour son ambiance familiale et son
-                esprit de camaraderie, notre centre dispose d'une infrastructure
-                moderne : un ring de boxe, des sacs de frappe, un sauna, du
-                matériel de cardio-training et des équipements de musculation.
+                Chez Équipe One X One, nous croyons que la boxe est bien plus
+                qu’un sport : c’est un outil de transformation et de dépassement
+                personnel. Nous nous engageons à inspirer et accompagner chaque
+                membre dans son parcours, pour qu’il atteigne ses objectifs avec
+                passion et détermination.
               </p>
 
               <div className="mt-4 md:mt-8">
