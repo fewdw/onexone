@@ -6,6 +6,7 @@ import Testimonials from "./components/Testimonials";
 import GymDesc from "./components/GymDesc";
 import Coachs from "./components/Coachs";
 import Cours from "./components/Cours";
+import ContactInfo from "./components/ContactInfo";
 
 export default function Home() {
   return (
@@ -14,8 +15,8 @@ export default function Home() {
       <Hero />
       <GymDesc />
       <Cours />
-      <Coachs />
       <Testimonials />
+      <ContactInfo />
       <Footer />
     </div>
   );

@@ -9,24 +9,26 @@ const GymDesc = () => {
           <div className="bg-orange-600 p-8 md:p-12 lg:px-16 lg:py-24">
             <div className="mx-auto max-w-xl text-center">
               <h2 className="text-2xl font-bold text-white md:text-3xl">
-                Notre Gym
+                Vision
               </h2>
 
               <p className="text-white/90 sm:mt-4 text-left">
-                Chez Équipe One X One, nous croyons que la boxe est bien plus
-                qu’un sport : c’est un outil de transformation et de dépassement
-                personnel. Nous nous engageons à inspirer et accompagner chaque
-                membre dans son parcours, pour qu’il atteigne ses objectifs avec
-                passion et détermination.
+                Au One X One, nous croyons que la boxe transforme des vies.
+                Notre mission est d'offrir un espace inclusif où chacun, quel
+                que soit son âge ou son niveau, peut se dépasser, gagner en
+                confiance et améliorer son bien-être physique et mental.
+                Rejoignez une communauté passionnée et découvrez la puissance de
+                la boxe dans un environnement convivial et motivant
               </p>
 
               <div className="mt-4 md:mt-8">
-                <Link
-                  href="/horaire-abonnements"
+                <a
+                  href="https://equipeonexone.fliipapp.com/horaire?cal=1&language=FR"
+                  target="_blank"
                   className="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-orange-600 transition focus:outline-none focus:ring focus:ring-yellow-400 hover:text-orange-700"
                 >
-                  Horaire et Abonnements
-                </Link>
+                  Calendrier
+                </a>
               </div>
             </div>
           </div>
