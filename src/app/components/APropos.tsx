@@ -26,34 +26,34 @@ const APropos = () => {
 
   return (
     <div className="space-t-16 bg-black">
-      {/* Video Section - Full Screen */}
-      <div className="relative h-screen w-full overflow-hidden">
+      {/* Video Section with Text */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           loop
           muted
+          playsInline // Ensures better behavior on mobile browsers
           controls={false}
         >
           <source src="gym.mp4" type="video/mp4" />
         </video>
-
-        {/* Centered Text */}
-        <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-          <div className="text-center text-white px-4 max-w-4xl w-full mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-semibold">
-              À propos de nous
-            </h2>
-            <p className="mt-4 text-lg sm:text-xl">
-              Bienvenue chez Équipe One X One, plus qu'un simple gymnase, une
-              communauté passionnée par la boxe, la remise en forme et le
-              dépassement de soi...
-            </p>
-          </div>
+        {/* Text Overlay */}
+        <div className="relative z-10 text-center text-white max-w-4xl px-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold">
+            À propos de nous
+          </h2>
+          <p className="mt-4 text-lg sm:text-xl">
+            Bienvenue chez Équipe One X One, plus qu'un simple gymnase, une
+            communauté passionnée par la boxe, la remise en forme et le
+            dépassement de soi...
+          </p>
         </div>
-      </div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      </section>
 
-      {/* Images Gallery - Masonry Layout (Pinterest-like) */}
+      {/* Images Gallery - Masonry Layout */}
       <div
         className="masonry-grid p-4"
         style={{
@@ -70,20 +70,20 @@ const APropos = () => {
                 : "translate-y-8 opacity-0"
             }`}
             style={{
-              breakInside: "avoid", // Prevent image from breaking across columns
-              marginBottom: "1rem", // Adds space between images
+              breakInside: "avoid",
+              marginBottom: "1rem",
             }}
           >
             <Image
               src={`/gallery/${index + 1}.jpg`}
               alt={`Gym Image ${index + 1}`}
-              layout="intrinsic" // Use intrinsic layout for natural image aspect ratio
+              layout="intrinsic"
               width={500}
-              height={700} // Adjusted aspect ratio for more control
+              height={700}
               className="object-cover rounded-lg"
-              placeholder="blur" // Use a low-res image first
-              blurDataURL={`/gallery/${index + 1}_lowres.jpg`} // Low-res placeholder (ensure these exist)
-              priority={index < 5} // Load first few images with high priority
+              placeholder="blur"
+              blurDataURL={`/gallery/${index + 1}_lowres.jpg`}
+              priority={index < 5}
             />
           </div>
         ))}
