@@ -24,6 +24,16 @@ const coaches = [
     description: "Multiple combats de boxe & kick-boxing à son actif",
     imageUrl: "jeremy.jpg",
   },
+  {
+    name: "David St-Pierre",
+    description: "Ancien champion du Québec.",
+    imageUrl: "david.jpg",
+  },
+  {
+    name: "Jeremy McNamara",
+    description: "Multiple combats de boxe & kick-boxing à son actif",
+    imageUrl: "jeremy.jpg",
+  },
 ];
 
 const Coachs = () => {

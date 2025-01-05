@@ -69,7 +69,7 @@ const Abonnements = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white">
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600">
+      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 pt-16">
         Abonnements
       </h2>
       <div className="mb-6 flex justify-center">
