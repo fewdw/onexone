@@ -33,6 +33,7 @@ const APropos = () => {
           autoPlay
           loop
           muted
+          controls={false}
         >
           <source src="gym.mp4" type="video/mp4" />
         </video>
