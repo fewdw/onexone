@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
 
 const courses = [
   {
@@ -52,8 +54,42 @@ const courses = [
 ];
 
 const CarteDeCours = () => {
+  const [inView, setInView] = useState<Set<number>>(new Set());
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(
+            entry.target.getAttribute("data-index") || "0",
+            10
+          );
+          if (entry.isIntersecting && !inView.has(index)) {
+            setInView((prev) => new Set([...prev, index]));
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    const elements = containerRef.current?.querySelectorAll(".animated");
+    elements?.forEach((element) => observer.observe(element));
+
+    return () => {
+      elements?.forEach((element) => observer.unobserve(element));
+    };
+  }, [inView]);
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white">
+    <div
+      ref={containerRef}
+      className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white"
+    >
       <h2 className="text-4xl font-extrabold text-center mb-12 text-orange-600">
         Cartes de Cours
       </h2>
@@ -61,7 +97,12 @@ const CarteDeCours = () => {
         {courses.map((course, index) => (
           <div
             key={index}
-            className={`rounded-lg border p-6 shadow-md flex flex-col justify-between h-full transition-transform duration-300 ${
+            data-index={index}
+            className={`animated rounded-lg border p-6 shadow-md flex flex-col justify-between h-full transition-transform duration-300 transform ${
+              inView.has(index)
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            } hover:scale-105 ${
               course.isPopular
                 ? "border-orange-600 bg-gradient-to-b from-gray-800 via-gray-900 to-black ring-2 ring-orange-600"
                 : "border-gray-700 bg-gray-800 shadow-sm"
@@ -85,7 +126,7 @@ const CarteDeCours = () => {
                   >
                     <span className="text-lg font-semibold text-orange-600">
                       {perClassPrice}$ par cours
-                    </span>{" "}
+                    </span>
                     <span className="text-sm text-gray-500">{`pour ${
                       option.count
                     } cours${option.count > 1 ? "" : ""}`}</span>

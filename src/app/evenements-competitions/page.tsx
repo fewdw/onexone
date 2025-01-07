@@ -7,15 +7,16 @@ const Page = () => {
       <Header />
 
       <div className="mt-8">
-        <h1 className="text-3xl font-semibold text-center text-orange-700">
+        {/* Add the fade-in animation class here */}
+        <h1 className="text-3xl font-semibold text-center text-orange-700 animate-fade-in">
           Événements et compétitions
         </h1>
 
-        <p className="mt-4 text-lg text-center text-white">
+        <p className="mt-4 text-lg text-center text-white animate-fade-in">
           Rejoignez-nous pour des cours de boxe dynamiques et adaptés à tous les
           niveaux !
         </p>
-        <p className="mt-2 text-lg text-center text-white">
+        <p className="mt-2 text-lg text-center text-white animate-fade-in">
           Nous organisons régulièrement des événements, des galas et des
           tournois pour nos boxeurs, et nous soutenons la communauté de la boxe
           avec passion.
@@ -38,7 +39,7 @@ const Page = () => {
             allowFullScreen
             style={{
               height: "1200px",
-              width: "70%",
+              width: "80%",
               border: "none",
               background: "black",
             }}

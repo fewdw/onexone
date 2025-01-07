@@ -77,6 +77,7 @@ const Abonnements = () => {
           value={selectedDuration}
           onChange={handleDurationChange}
           className="select select-bordered w-full max-w-xs bg-gray-900 text-white border-gray-600 rounded-md px-4 py-2"
+          aria-label="Sélectionnez une durée d'abonnement"
         >
           <option disabled>Choisissez une durée</option>
           <option value="1 MOIS">1 Mois</option>
@@ -102,10 +103,14 @@ const Abonnements = () => {
                 membership.isPopular
                   ? "border-orange-600 bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-md ring-2 ring-orange-600"
                   : "border-gray-700 bg-gray-800 shadow-sm"
-              } p-6 sm:p-8 flex flex-col justify-between sm:h-[320px] md:h-auto h-auto transition-transform duration-300`}
+              } p-6 sm:p-8 flex flex-col justify-between sm:h-[320px] md:h-auto h-auto transition-transform duration-300 transform hover:scale-105`}
             >
               {membership.isPopular && (
-                <span className="block mb-3 text-center bg-orange-600 text-black px-3 py-1 text-xs font-semibold rounded">
+                <span
+                  className="block mb-3 text-center bg-orange-600 text-black px-3 py-1 text-xs font-semibold rounded animate__animated animate__fadeIn animate__delay-1s"
+                  role="alert"
+                  aria-label="Populaire"
+                >
                   Populaire
                 </span>
               )}
@@ -139,6 +144,7 @@ const Abonnements = () => {
                 <a
                   href="https://equipeonexone.fliipapp.com/user/register?language=FR"
                   className="btn btn-primary w-full bg-orange-600 border-none hover:bg-orange-700 text-white"
+                  aria-label="S'inscrire maintenant"
                 >
                   S'inscrire maintenant
                 </a>
