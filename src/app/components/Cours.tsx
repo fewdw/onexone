@@ -14,7 +14,7 @@ const classes = [
   },
   {
     name: "Cours pour enfants",
-    imageUrl: "enfants.jpg", // Assuming a new image for this class
+    imageUrl: "enfant.jpg", // Assuming a new image for this class
   },
   {
     name: "Cours libre",
@@ -25,7 +25,7 @@ const classes = [
 const Classes = () => {
   return (
     <div className="bg-black pt-8">
-      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
+      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl pb-8">
         Nos Cours
       </h2>
 
@@ -34,7 +34,7 @@ const Classes = () => {
         {classes.map((classItem, index) => (
           <div
             key={index}
-            className="group relative block bg-black rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
+            className="group relative block bg-black rounded-lg overflow-hidden shadow-lg transition transform"
           >
             <img
               alt={classItem.name}

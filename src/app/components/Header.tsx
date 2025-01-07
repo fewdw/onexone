@@ -42,7 +42,7 @@ const Header = () => {
 
         {/* Membre button - Always visible */}
         <Link
-          className="block md:inline-block rounded-lg bg-orange-700 px-4 py-2 text-center text-white shadow hover:bg-orange-800"
+          className="hidden lg:block rounded-lg bg-orange-700 px-4 py-2 text-center text-white shadow hover:bg-orange-800"
           target="_blank"
           href="https://equipeonexone.fliipapp.com/home/dashboard"
         >
@@ -74,6 +74,15 @@ const Header = () => {
                 </li>
                 <li>
                   <Link href="/contact">Contactez-nous</Link>
+                </li>
+                <li>
+                  <Link
+                    className="block rounded-lg bg-orange-700 px-4 py-2 text-center text-white shadow hover:bg-orange-800"
+                    target="_blank"
+                    href="https://equipeonexone.fliipapp.com/home/dashboard"
+                  >
+                    Membre
+                  </Link>
                 </li>
               </ul>
             </details>

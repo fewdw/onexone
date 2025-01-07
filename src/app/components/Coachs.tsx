@@ -1,46 +1,45 @@
 import React from "react";
 
-// JSON data for coaches
 const coaches = [
   {
     name: "Junior Petanqui",
     description:
-      "Multiple titre de Champion Canadien, médaille aux Jeux panaméricain et Continentaux.",
+      "6x champion canadien, médaillé d'argent aux Jeux continentaux, médaille de bronze aux Jeux panaméricains.",
     imageUrl: "junior.jpg",
   },
   {
-    name: "Cedrick Belony",
+    name: "Cedric Belony",
     description:
-      "Multiple titre de champion du Québec et médaille aux jeux panaméricain.",
+      "Entraîneur, participant aux Jeux Olympiques 2024, médaille de bronze aux Jeux panaméricains.",
     imageUrl: "cedrick.jpg",
   },
   {
     name: "David St-Pierre",
-    description: "Ancien champion du Québec.",
+    description: "Entraîneur, multiple champion du Québec.",
     imageUrl: "david.jpg",
   },
   {
     name: "Jeremy McNamara",
-    description: "Multiple combats de boxe & kick-boxing à son actif",
+    description: "Entraîneur de kick-boxing.",
     imageUrl: "jeremy.jpg",
   },
   {
-    name: "David St-Pierre",
-    description: "Ancien champion du Québec.",
-    imageUrl: "david.jpg",
+    name: "Jason St-Charles",
+    description: "Entraîneur.",
+    imageUrl: "arianne.jpg",
   },
   {
-    name: "Jeremy McNamara",
-    description: "Multiple combats de boxe & kick-boxing à son actif",
-    imageUrl: "jeremy.jpg",
+    name: "Aryanne Boileau",
+    description: "Réceptionniste.",
+    imageUrl: "arianne.jpg",
   },
 ];
 
 const Coachs = () => {
   return (
     <div className="bg-black">
-      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl lg:pt-16">
-        Nos Entraîneurs
+      <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
+        Notre Équipe
       </h2>
 
       {/* Grid container for responsive layout */}

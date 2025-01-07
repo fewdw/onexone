@@ -6,16 +6,27 @@ const HeroSection = () => {
   const endSectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <section className="relative bg-gray-50 h-screen flex items-center justify-center">
+    <section className="relative bg-black h-screen flex items-center justify-center">
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-black"></div> {/* Dark overlay */}
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="gym.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        {/* Dark overlay */}
       </div>
 
       {/* Content Overlay */}
       <div className="relative w-full mx-auto max-w-screen-xl px-4">
         <div className="mx-auto max-w-xl text-center text-white">
-          <h1 className="text-3xl font-extrabold sm:text-5xl">
+          <h1 className="text-3xl font-extrabold sm:text-5xl mb-6">
             0 expérience nécessaire,
             <strong className="font-extrabold text-orange-700 block sm:block">
               0 équipement requis.
