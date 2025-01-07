@@ -133,6 +133,16 @@ const Abonnements = () => {
                   {agreementText}
                 </p>
               )}
+
+              {/* Add the "S'inscrire maintenant" button */}
+              <div className="mt-4">
+                <a
+                  href="https://equipeonexone.fliipapp.com/user/register?language=FR"
+                  className="btn btn-primary w-full bg-orange-600 border-none hover:bg-orange-700 text-white"
+                >
+                  S'inscrire maintenant
+                </a>
+              </div>
             </div>
           );
         })}

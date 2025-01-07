@@ -38,7 +38,7 @@ const Page = () => {
             allowFullScreen
             style={{
               height: "1200px",
-              width: "90%",
+              width: "70%",
               border: "none",
               background: "black",
             }}

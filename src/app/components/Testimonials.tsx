@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 
 const testimonials = [
   {
@@ -22,19 +23,58 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [inView, setInView] = useState<Set<number>>(new Set());
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(
+            entry.target.getAttribute("data-index") || "0",
+            10
+          );
+          if (entry.isIntersecting && !inView.has(index)) {
+            setInView((prev) => new Set([...prev, index]));
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    const elements = containerRef.current?.querySelectorAll(".animated");
+    elements?.forEach((element) => observer.observe(element));
+
+    return () => {
+      elements?.forEach((element) => observer.unobserve(element));
+    };
+  }, [inView]);
+
   return (
     <div>
       <section className="bg-black">
-        <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
+        <div
+          ref={containerRef}
+          className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
+        >
+          <div className="font-bold text-orange-700 relative text-center pb-4 text-5xl">
             Lisez les avis de nos clients de confiance.
-          </h2>
+          </div>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 pt-8">
             {testimonials.map((testimonial, index) => (
               <blockquote
                 key={index}
-                className="rounded-lg p-6 shadow-sm sm:p-8"
+                data-index={index}
+                className={`animated rounded-lg p-6 shadow-sm sm:p-8 bg-gray-900 transition transform ${
+                  inView.has(index)
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                } duration-500`}
               >
                 <div className="flex items-center gap-4">
                   <div>

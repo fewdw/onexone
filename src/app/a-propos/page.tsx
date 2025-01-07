@@ -8,7 +8,7 @@ import Coachs from "../components/Coachs";
 
 const page = () => {
   return (
-    <div>
+    <div className="bg-black">
       <Header />
       <APropos />
       <AproposPhotos />

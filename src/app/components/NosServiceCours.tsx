@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 const courses = [
@@ -53,19 +55,54 @@ const courses = [
 ];
 
 const NosServiceCours = () => {
+  const [inView, setInView] = useState<Set<number>>(new Set());
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(
+            entry.target.getAttribute("data-index") || "0",
+            10
+          );
+          if (entry.isIntersecting && !inView.has(index)) {
+            setInView((prev) => new Set([...prev, index]));
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    const elements = containerRef.current?.querySelectorAll(".animated");
+    elements?.forEach((element) => observer.observe(element));
+
+    return () => {
+      elements?.forEach((element) => observer.unobserve(element));
+    };
+  }, [inView]);
+
   return (
-    <div className="bg-black py-12 px-4 sm:px-6 lg:px-8">
+    <div ref={containerRef} className="bg-black py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="font-bold text-white relative text-center pt-16 pb-16 text-5xl">
+        <div className="font-bold text-orange-700 relative text-center pb-16 text-5xl pt-16">
           Catégories de Cours
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-orange-700 mt-1"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-12">
           {courses.map((course, index) => (
             <div
               key={index}
-              className="bg-gray-900 rounded-lg overflow-hidden flex flex-col items-center text-center max-w-lg mx-auto lg:max-w-xl"
+              data-index={index}
+              className={`animated group relative bg-gray-900 rounded-lg overflow-hidden flex flex-col items-center text-center max-w-lg mx-auto lg:max-w-xl transition transform ${
+                inView.has(index)
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              } duration-500`}
             >
               <div className="relative w-full h-56">
                 <Image

@@ -61,7 +61,7 @@ const CarteDeCours = () => {
         {courses.map((course, index) => (
           <div
             key={index}
-            className={`rounded-lg border p-6 shadow-md transition-transform duration-300 ${
+            className={`rounded-lg border p-6 shadow-md flex flex-col justify-between h-full transition-transform duration-300 ${
               course.isPopular
                 ? "border-orange-600 bg-gradient-to-b from-gray-800 via-gray-900 to-black ring-2 ring-orange-600"
                 : "border-gray-700 bg-gray-800 shadow-sm"
@@ -93,6 +93,16 @@ const CarteDeCours = () => {
                 );
               })}
             </ul>
+
+            {/* Add the "S'inscrire maintenant" button at the bottom of the card */}
+            <div className="pt-6">
+              <a
+                href="https://equipeonexone.fliipapp.com/user/register?language=FR"
+                className="btn btn-primary w-full bg-orange-600 border-none hover:bg-orange-700 text-white"
+              >
+                S'inscrire maintenant
+              </a>
+            </div>
           </div>
         ))}
       </div>

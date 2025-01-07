@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const coaches = [
   {
@@ -36,6 +36,37 @@ const coaches = [
 ];
 
 const Coachs = () => {
+  const [inView, setInView] = useState<boolean[]>(
+    new Array(coaches.length).fill(false)
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(
+              entry.target.getAttribute("data-index") || "0"
+            );
+            setInView((prev) => {
+              const updatedInView = [...prev];
+              updatedInView[index] = true;
+              return updatedInView;
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".coach-card");
+    elements.forEach((element, index) => observer.observe(element));
+
+    return () => {
+      elements.forEach((element) => observer.unobserve(element));
+    };
+  }, []);
+
   return (
     <div className="bg-black">
       <h2 className="text-center text-4xl font-bold tracking-tight text-orange-700 sm:text-5xl">
@@ -47,7 +78,12 @@ const Coachs = () => {
         {coaches.map((coach, index) => (
           <a
             key={index}
-            className="group relative block bg-black flex-shrink-0 sm:w-full h-full"
+            className={`group relative block bg-black flex-shrink-0 sm:w-full h-full coach-card transition-all duration-500 ${
+              inView[index]
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+            data-index={index}
           >
             <img
               alt={coach.name}

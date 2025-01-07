@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Apropostext = () => {
+  const [inView, setInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    const element = document.getElementById("apropos-text");
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   return (
-    <div className="py-16 px-6 sm:px-8 lg:px-12 bg-black text-white">
+    <div
+      id="apropos-text"
+      className={`py-16 px-6 sm:px-8 lg:px-12 bg-black text-white transition-all duration-500 ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section: À propos de nous */}
         <div className="text-center mb-12">
@@ -11,7 +37,9 @@ const Apropostext = () => {
           </h3>
           <p className="text-lg text-white max-w-3xl mx-auto text-justify leading-relaxed">
             Bienvenue chez{" "}
-            <span className="font-semibold text-justify">Équipe One X One</span>
+            <span className="font-extrabold text-justify">
+              Équipe One X One
+            </span>
             , plus qu'un simple gymnase, une communauté passionnée par la boxe,
             la remise en forme et le dépassement de soi. Depuis notre création,
             nous nous engageons à offrir un espace accueillant où les membres de
@@ -21,19 +49,19 @@ const Apropostext = () => {
         </div>
 
         {/* Section: Notre approche */}
-        <div className="rounded-lg p-8 mb-16 ">
+        <div className="rounded-lg p-8 mb-16">
           <h3 className="text-4xl font-extrabold sm:text-5xl mb-6 text-orange-700 text-center">
             Notre approche
           </h3>
           <p className="text-lg text-white max-w-3xl mx-auto text-justify leading-relaxed">
             Chez{" "}
-            <span className="font-semibold text-justify">Équipe One X One</span>
+            <span className="font-extrabold text-justify">
+              Équipe One X One
+            </span>
             , nous croyons que la boxe est bien plus qu'un sport : c'est un mode
             de vie. Nous proposons des cours adaptés à tous les objectifs, qu'il
             s'agisse de se mettre en forme, d'apprendre les techniques de base
-            ou de performer en compétition. Peu importe vos objectifs, notre
-            approche vous aide à progresser à votre rythme et à dépasser vos
-            limites.
+            ou de performer en compétition.
           </p>
         </div>
 
@@ -43,7 +71,7 @@ const Apropostext = () => {
             Pourquoi choisir ?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="rounded-lg p-6 text-center ">
+            <div className="rounded-lg p-6 text-center transform transition-all duration-500">
               <div className="mb-4 text-5xl">
                 <i className="fas fa-chalkboard-teacher text-orange-700"></i>
               </div>
@@ -56,7 +84,7 @@ const Apropostext = () => {
                 vous-même.
               </p>
             </div>
-            <div className="rounded-lg p-6 text-center ">
+            <div className="rounded-lg p-6 text-center transform transition-all duration-500">
               <div className="mb-4 text-5xl">
                 <i className="fas fa-hand-holding-heart text-orange-700"></i>
               </div>
@@ -69,7 +97,7 @@ const Apropostext = () => {
                 global.
               </p>
             </div>
-            <div className="rounded-lg p-6 text-center ">
+            <div className="rounded-lg p-6 text-center transform transition-all duration-500">
               <div className="mb-4 text-5xl">
                 <i className="fas fa-users text-orange-700"></i>
               </div>

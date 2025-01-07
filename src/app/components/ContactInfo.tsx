@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const ContactInfo = () => {
   // Days of the week and logic for current day
@@ -13,11 +14,37 @@ const ContactInfo = () => {
   ];
   const currentDay = (new Date().getDay() + 6) % 7;
 
+  const [inView, setInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    const element = document.getElementById("contact-info");
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 px-6 sm:px-8 md:px-12 lg:px-16 py-8 lg:py-12">
+    <div
+      id="contact-info"
+      className={`grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 px-6 sm:px-8 md:px-12 lg:px-16 py-8 lg:py-12 transition-all duration-500 ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       {/* Contact Details */}
-      <div className="rounded-lg p-6 sm:p-8 md:p-10 shadow-lg">
-        <h3 className="text-3xl font-bold text-orange-600 mb-6">
+      <div className="rounded-lg p-6 sm:p-8 md:p-10 shadow-lg transform transition-all duration-500">
+        <h3 className="text-3xl font-bold text-orange-700 mb-6">
           Nos Coordonnées
         </h3>
         <ul className="space-y-6">
@@ -58,7 +85,7 @@ const ContactInfo = () => {
             <span className="text-lg text-gray-300">
               <a
                 href="mailto:info@boxeonexone.ca"
-                className="hover:text-orange-600"
+                className="hover:text-orange-700"
               >
                 info@boxeonexone.ca
               </a>
@@ -67,7 +94,7 @@ const ContactInfo = () => {
           <li className="flex flex-col sm:flex-row sm:items-center gap-4">
             <a
               href="https://www.instagram.com/equipe_onexoneboxe/"
-              className="text-lg text-gray-400 hover:text-orange-600 flex items-center"
+              className="text-lg text-gray-400 hover:text-orange-700 flex items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -76,7 +103,7 @@ const ContactInfo = () => {
             </a>
             <a
               href="https://www.facebook.com/equipeonexonex"
-              className="text-lg text-gray-400 hover:text-orange-600 flex items-center"
+              className="text-lg text-gray-400 hover:text-orange-700 flex items-center"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,8 +115,8 @@ const ContactInfo = () => {
       </div>
 
       {/* Google Map Embed */}
-      <div className="rounded-lg shadow-lg p-6 sm:p-8 md:p-10 flex flex-col">
-        <h3 className="text-3xl font-bold text-orange-600 mb-6">
+      <div className="rounded-lg shadow-lg p-6 sm:p-8 md:p-10 flex flex-col transform transition-all duration-500">
+        <h3 className="text-3xl font-bold text-orange-700 mb-6">
           Où nous trouver
         </h3>
         <div
