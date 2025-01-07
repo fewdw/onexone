@@ -16,7 +16,7 @@ const ContactInfo = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 px-6 sm:px-8 md:px-12 lg:px-16 py-8 lg:py-12">
       {/* Contact Details */}
-      <div className=" rounded-lg p-6 sm:p-8 md:p-10 shadow-lg">
+      <div className="rounded-lg p-6 sm:p-8 md:p-10 shadow-lg">
         <h3 className="text-3xl font-bold text-orange-600 mb-6">
           Nos Coordonnées
         </h3>
@@ -48,6 +48,22 @@ const ContactInfo = () => {
               </p>
             ))}
           </li>
+          {/* Phone and Email */}
+          <li className="flex items-center">
+            <span className="text-2xl mr-3 text-gray-400">📞</span>
+            <span className="text-lg text-gray-300">450 443 0853</span>
+          </li>
+          <li className="flex items-center">
+            <span className="text-2xl mr-3 text-gray-400">📧</span>
+            <span className="text-lg text-gray-300">
+              <a
+                href="mailto:info@boxeonexone.ca"
+                className="hover:text-orange-600"
+              >
+                info@boxeonexone.ca
+              </a>
+            </span>
+          </li>
           <li className="flex flex-col sm:flex-row sm:items-center gap-4">
             <a
               href="https://www.instagram.com/equipe_onexoneboxe/"
@@ -72,7 +88,7 @@ const ContactInfo = () => {
       </div>
 
       {/* Google Map Embed */}
-      <div className=" rounded-lg shadow-lg p-6 sm:p-8 md:p-10 flex flex-col">
+      <div className="rounded-lg shadow-lg p-6 sm:p-8 md:p-10 flex flex-col">
         <h3 className="text-3xl font-bold text-orange-600 mb-6">
           Où nous trouver
         </h3>
