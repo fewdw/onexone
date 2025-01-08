@@ -76,7 +76,7 @@ const GymDesc = () => {
             <img
               data-index="1"
               alt="Modern gym setup with equipment"
-              src="vision2.jpg"
+              src="acceuil.jpg"
               className={`animated h-40 w-full object-cover sm:h-56 md:h-full transform transition-all duration-500 ${
                 inView.has(1)
                   ? "translate-y-0 opacity-100"
