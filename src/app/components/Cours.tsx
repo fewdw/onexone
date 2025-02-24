@@ -57,7 +57,7 @@ const Classes = () => {
   return (
     <div ref={containerRef} className="bg-black pt-8">
       <div className="font-bold text-orange-700 relative text-center pb-4 text-5xl">
-        Catégories de Cours
+        Nos Cours
       </div>
 
       {/* Grid container for responsive layout */}
@@ -89,7 +89,7 @@ const Classes = () => {
 
       <div
         data-index={classes.length}
-        className={`animated flex justify-center mt-8 transition transform ${
+        className={`animated flex justify-center transition transform ${
           inView.has(classes.length)
             ? "translate-y-0 opacity-100"
             : "translate-y-8 opacity-0"

@@ -4,10 +4,10 @@ import NosServiceCours from "../components/NosServiceCours";
 
 const page = () => {
   return (
-    <div>
+    <main className="bg-black min-h-screen">
       <Header />
       <NosServiceCours />
-    </div>
+    </main>
   );
 };
 

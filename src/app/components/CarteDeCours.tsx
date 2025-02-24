@@ -90,60 +90,65 @@ const CarteDeCours = () => {
       ref={containerRef}
       className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white"
     >
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-orange-600">
+      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 bg-clip-text pt-16">
         Cartes de Cours
       </h2>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {courses.map((course, index) => (
           <div
             key={index}
             data-index={index}
-            className={`animated rounded-lg border p-6 shadow-md flex flex-col justify-between h-full transition-transform duration-300 transform ${
-              inView.has(index)
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            } hover:scale-105 ${
+            className={`animated rounded-2xl p-8 shadow-2xl flex flex-col justify-between transition-all duration-300 hover:scale-105 ${
               course.isPopular
-                ? "border-orange-600 bg-gradient-to-b from-gray-800 via-gray-900 to-black ring-2 ring-orange-600"
-                : "border-gray-700 bg-gray-800 shadow-sm"
-            }`}
+                ? "bg-gradient-to-b from-gray-800 via-gray-900 to-black border-2 border-orange-600"
+                : "bg-gray-900 border border-gray-800"
+            } hover:border-orange-500 overflow-hidden group`}
           >
             {course.isPopular && (
-              <span className="block mb-3 text-center bg-orange-600 text-black px-3 py-1 text-xs font-semibold rounded">
-                Populaire
-              </span>
+              <div className="absolute top-0 right-0 bg-orange-600 text-black px-6 py-1 text-sm font-bold skew-x-12 shadow-xl">
+                POPULAIRE
+              </div>
             )}
-            <h3 className="text-2xl font-semibold text-center">
-              {course.name}
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {course.options.map((option, idx) => {
-                const perClassPrice = (option.price / option.count).toFixed(2);
-                return (
-                  <li
-                    key={idx}
-                    className="flex justify-between items-center text-gray-300"
-                  >
-                    <span className="text-lg font-semibold text-orange-600">
-                      {perClassPrice}$ par cours
-                    </span>
-                    <span className="text-sm text-gray-500">{`pour ${
-                      option.count
-                    } cours${option.count > 1 ? "" : ""}`}</span>
-                  </li>
-                );
-              })}
-            </ul>
 
-            {/* Add the "S'inscrire maintenant" button at the bottom of the card */}
-            <div className="pt-6">
-              <a
-                href="https://equipeonexone.fliipapp.com/user/register?language=FR"
-                className="btn btn-primary w-full bg-orange-600 border-none hover:bg-orange-700 text-white"
-              >
-                S'inscrire maintenant
-              </a>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+                {course.name}
+              </h3>
+
+              <ul className="space-y-6">
+                {course.options.map((option, idx) => {
+                  const perClassPrice = (option.price / option.count).toFixed(
+                    2
+                  );
+                  return (
+                    <li
+                      key={idx}
+                      className="flex flex-col justify-between border-b border-gray-700 pb-4"
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="text-3xl font-black text-orange-500">
+                          {perClassPrice}$
+                        </span>
+                        <span className="text-sm text-gray-400">
+                          {option.count} cours
+                        </span>
+                      </div>
+                      <div className="text-right text-sm text-amber-100">
+                        Total: {option.price.toFixed(2)}$
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
+
+            <a
+              href="https://equipeonexone.fliipapp.com/user/register?language=FR"
+              className="w-full py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-400 text-center"
+            >
+              Rejoindre Maintenant
+            </a>
           </div>
         ))}
       </div>

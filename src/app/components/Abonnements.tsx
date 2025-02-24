@@ -1,157 +1,104 @@
-import React, { useState } from "react";
+"use client";
+import React from "react";
 
 const memberships = [
   {
     name: "LIBRE",
-    description: "Accès libre à toutes nos installations.",
-    prices: [
-      { duration: "1 MOIS", price: 59.99 },
-      { duration: "3 MOIS", price: 49.99 },
-      { duration: "6 MOIS", price: 43.33 },
-      { duration: "12 MOIS", price: 41.66 },
-    ],
+    description: "Accès libre à toutes nos installations",
+    price: 59.99,
     isPopular: false,
   },
   {
-    name: "COURS EN GROUPE 2 COURS/SEMAINE",
-    description: "Participez à 2 cours par semaine avec nos coachs.",
-    prices: [
-      { duration: "1 MOIS", price: 119.99 },
-      { duration: "3 MOIS", price: 105.99 },
-      { duration: "6 MOIS", price: 94.99 },
-      { duration: "12 MOIS", price: 84.99 },
-    ],
-    isPopular: false,
-  },
-  {
-    name: "COURS EN GROUPE ILLIMITÉ",
-    description: "Accès illimité à tous nos cours en groupe.",
-    prices: [
-      { duration: "1 MOIS", price: 209.99 },
-      { duration: "3 MOIS", price: 179.99 },
-      { duration: "6 MOIS", price: 149.99 },
-      { duration: "12 MOIS", price: 129.99 },
-    ],
+    name: "2X/SEMAINE",
+    description: "2 cours par semaine avec coachs",
+    price: 105.99,
     isPopular: true,
   },
   {
-    name: "ENFANT",
-    description: "Des cours adaptés pour les enfants.",
-    prices: [
-      { duration: "1 MOIS", price: 119.99 },
-      { duration: "3 MOIS", price: 104.99 },
-      { duration: "6 MOIS", price: 94.99 },
-      { duration: "12 MOIS", price: 84.99 },
-    ],
+    name: "3X/SEMAINE",
+    description: "3 cours intensifs par semaine",
+    price: 139.99,
     isPopular: false,
   },
   {
-    name: "COMPETITION",
-    description: "Pour ceux qui veulent aller plus loin et performer.",
-    prices: [
-      { duration: "1 MOIS", price: 205.99 },
-      { duration: "3 MOIS", price: 184.99 },
-      { duration: "6 MOIS", price: 154.99 },
-      { duration: "12 MOIS", price: 134.99 },
-    ],
+    name: "ILLIMITÉ",
+    description: "Accès illimité à tous les cours",
+    price: 149.99,
+    isPopular: true,
+  },
+  {
+    name: "ENFANTS",
+    description: "Programme spécialisé pour enfants",
+    price: 94.99,
+    isPopular: false,
+  },
+  {
+    name: "PRIVÉ",
+    description: "Coaching personnel sur mesure",
+    price: 199.99,
+    isPopular: true,
+  },
+  {
+    name: "SEMI-PRIVÉ",
+    description: "Cours duo personnalisé",
+    price: 129.99,
+    isPopular: false,
+  },
+  {
+    name: "COMPÉTITION",
+    description: "Programme élite compétitif",
+    price: 134.99,
     isPopular: true,
   },
 ];
 
 const Abonnements = () => {
-  const [selectedDuration, setSelectedDuration] = useState("1 MOIS");
-
-  const handleDurationChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedDuration(event.target.value);
-  };
-
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white">
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 pt-16">
-        Abonnements
+      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 bg-clip-text pt-16">
+        Nos Abonnements
       </h2>
-      <div className="mb-6 flex justify-center">
-        <select
-          value={selectedDuration}
-          onChange={handleDurationChange}
-          className="select select-bordered w-full max-w-xs bg-gray-900 text-white border-gray-600 rounded-md px-4 py-2"
-          aria-label="Sélectionnez une durée d'abonnement"
-        >
-          <option disabled>Choisissez une durée</option>
-          <option value="1 MOIS">1 Mois</option>
-          <option value="3 MOIS">3 Mois</option>
-          <option value="6 MOIS">6 Mois</option>
-          <option value="12 MOIS">12 Mois</option>
-        </select>
-      </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {memberships.map((membership, index) => {
-          const price = membership.prices.find(
-            (p) => p.duration === selectedDuration
-          );
-          const agreementText =
-            selectedDuration !== "1 MOIS"
-              ? `**Sur une entente de ${selectedDuration}**`
-              : "";
 
-          return (
-            <div
-              key={index}
-              className={`rounded-lg border ${
-                membership.isPopular
-                  ? "border-orange-600 bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-md ring-2 ring-orange-600"
-                  : "border-gray-700 bg-gray-800 shadow-sm"
-              } p-6 sm:p-8 flex flex-col justify-between sm:h-[320px] md:h-auto h-auto transition-transform duration-300 transform hover:scale-105`}
-            >
-              {membership.isPopular && (
-                <span
-                  className="block mb-3 text-center bg-orange-600 text-black px-3 py-1 text-xs font-semibold rounded animate__animated animate__fadeIn animate__delay-1s"
-                  role="alert"
-                  aria-label="Populaire"
-                >
-                  Populaire
-                </span>
-              )}
-              <div className="text-center flex flex-col justify-between h-full">
-                <h3 className="text-2xl font-semibold">{membership.name}</h3>
-                <p className="mt-2 text-sm text-gray-400 hidden sm:block">
-                  {membership.description}
-                </p>
-                {price ? (
-                  <div className="mt-2 sm:mt-4">
-                    <span className="text-4xl font-extrabold">
-                      {price.price.toFixed(2)}$
-                    </span>
-                    <span className="text-sm text-gray-400"> / MOIS</span>
-                  </div>
-                ) : (
-                  <p className="mt-2 sm:mt-4 text-gray-500">
-                    Pas de prix disponible pour cette durée
-                  </p>
-                )}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {memberships.map((membership, index) => (
+          <div
+            key={index}
+            className={`relative rounded-2xl p-8 shadow-2xl h-[380px] flex flex-col justify-between transition-all duration-300 hover:scale-105 ${
+              membership.isPopular
+                ? "bg-gradient-to-b from-gray-800 via-gray-900 to-black border-2 border-orange-600"
+                : "bg-gray-900 border border-gray-800"
+            } hover:border-orange-500 overflow-hidden group`}
+          >
+            {membership.isPopular && (
+              <div className="absolute top-0 right-0 bg-orange-600 text-black px-6 py-1 text-sm font-bold skew-x-12 shadow-xl">
+                POPULAIRE
               </div>
+            )}
 
-              {agreementText && (
-                <p className="mt-4 text-sm text-gray-400 text-center">
-                  {agreementText}
-                </p>
-              )}
-
-              {/* Add the "S'inscrire maintenant" button */}
-              <div className="mt-4">
-                <a
-                  href="https://equipeonexone.fliipapp.com/user/register?language=FR"
-                  className="btn btn-primary w-full bg-orange-600 border-none hover:bg-orange-700 text-white"
-                  aria-label="S'inscrire maintenant"
-                >
-                  S'inscrire maintenant
-                </a>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-3xl font-black bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+                {membership.name}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {membership.description}
+              </p>
             </div>
-          );
-        })}
+
+            <div className="mt-8">
+              <div className="text-5xl font-black mb-2 text-orange-500">
+                {membership.price.toFixed(2)}$
+              </div>
+              <span className="text-sm text-gray-400">/MOIS</span>
+            </div>
+
+            <a
+              href="https://equipeonexone.fliipapp.com/user/register?language=FR"
+              className="w-full py-3 mt-4 bg-orange-600 hover:bg-orange-700 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-500 text-center"
+            >
+              Rejoindre Maintenant
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

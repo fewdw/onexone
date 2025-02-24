@@ -27,7 +27,8 @@ const AproposPhotos = () => {
   }, []);
 
   // Determine number of images based on screen size
-  const totalImages = windowWidth < 1024 ? 37 : 74;
+  //const totalImages = windowWidth < 1024 ? 37 : 74;
+  const totalImages = 9;
 
   // Create column arrays for different screen sizes
   const getColumnArrays = (count: number, columnCount: number): number[][] => {

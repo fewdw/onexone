@@ -7,6 +7,7 @@ import GymDesc from "./components/GymDesc";
 import Coachs from "./components/Coachs";
 import Cours from "./components/Cours";
 import ContactInfo from "./components/ContactInfo";
+import Fliip from "./components/Fliip";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <GymDesc />
       <Cours />
+      <Fliip />
       <Testimonials />
       <ContactInfo />
       <Footer />
