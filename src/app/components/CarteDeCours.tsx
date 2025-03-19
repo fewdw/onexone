@@ -4,51 +4,120 @@ import React, { useEffect, useState, useRef } from "react";
 
 const courses = [
   {
-    name: "Cours de groupe",
+    name: "Carte de Cours (Paiement Unique)",
     options: [
-      { count: 1, price: 23.99 },
-      { count: 5, price: 103.99 },
-      { count: 10, price: 189.99 },
-      { count: 20, price: 349.99 },
+      {
+        count: 1,
+        price: 23.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_membership/1/34780",
+      },
+      {
+        count: 5,
+        price: 103.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_membership/1/34781",
+      },
+      {
+        count: 10,
+        price: 189.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_membership/1/34782",
+      },
+      {
+        count: 20,
+        price: 349.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_membership/1/34783",
+      },
     ],
   },
   {
-    name: "Cours Enfants",
+    name: "Cours Privé",
     options: [
-      { count: 5, price: 89.99 },
-      { count: 10, price: 154.99 },
-    ],
-  },
-  {
-    name: "Privé",
-    options: [
-      { count: 1, price: 89.99 },
-      { count: 5, price: 399.99 },
-      { count: 10, price: 749.99 },
-      { count: 20, price: 1399.99 },
-      { count: 50, price: 3249.99 },
-      { count: 100, price: 5999.99 },
+      {
+        count: 1,
+        price: 89.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4918",
+      },
+      {
+        count: 5,
+        price: 399.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4919",
+      },
+      {
+        count: 10,
+        price: 749.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4920",
+      },
+      {
+        count: 20,
+        price: 1399.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4922",
+      },
+      {
+        count: 50,
+        price: 3249.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4923",
+      },
+      {
+        count: 100,
+        price: 5999.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4924",
+      },
     ],
     isPopular: true,
   },
   {
     name: "Semi Privé (2 participants)",
     options: [
-      { count: 1, price: 64.99 },
-      { count: 5, price: 274.99 },
-      { count: 10, price: 499.99 },
-      { count: 20, price: 899.99 },
-      { count: 50, price: 1999.99 },
-      { count: 100, price: 3499.99 },
+      {
+        count: 1,
+        price: 64.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4925",
+      },
+      {
+        count: 5,
+        price: 274.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4926",
+      },
+      {
+        count: 10,
+        price: 499.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4928",
+      },
+      {
+        count: 20,
+        price: 899.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4929",
+      },
+      {
+        count: 50,
+        price: 1999.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4931",
+      },
+      {
+        count: 100,
+        price: 3499.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4932",
+      },
     ],
     isPopular: true,
   },
   {
     name: "Semi Privé (4-6 participants)",
     options: [
-      { count: 1, price: 39.99 },
-      { count: 10, price: 349.99 },
-      { count: 20, price: 599.99 },
+      {
+        count: 1,
+        price: 39.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4933",
+      },
+      {
+        count: 10,
+        price: 349.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4934",
+      },
+      {
+        count: 20,
+        price: 599.99,
+        link: "https://equipeonexone.fliipapp.com/user/register/buy_service/1/4935",
+      },
     ],
   },
 ];
@@ -111,16 +180,13 @@ const CarteDeCours = () => {
               </div>
             )}
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h3 className="text-2xl font-black bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
                 {course.name}
               </h3>
 
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 {course.options.map((option, idx) => {
-                  const perClassPrice = (option.price / option.count).toFixed(
-                    2
-                  );
                   return (
                     <li
                       key={idx}
@@ -128,14 +194,11 @@ const CarteDeCours = () => {
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-3xl font-black text-orange-500">
-                          {perClassPrice}$
+                          {option.price.toFixed(2)}$
                         </span>
                         <span className="text-sm text-gray-400">
                           {option.count} cours
                         </span>
-                      </div>
-                      <div className="text-right text-sm text-amber-100">
-                        Total: {option.price.toFixed(2)}$
                       </div>
                     </li>
                   );
@@ -143,12 +206,14 @@ const CarteDeCours = () => {
               </ul>
             </div>
 
-            <a
-              href="https://equipeonexone.fliipapp.com/user/register?language=FR"
-              className="w-full py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-400 text-center"
-            >
-              Rejoindre Maintenant
-            </a>
+            {course.options.length > 0 && (
+              <a
+                href={course.options[0].link}
+                className="w-full py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-400 text-center"
+              >
+                Rejoindre Maintenant
+              </a>
+            )}
           </div>
         ))}
       </div>
