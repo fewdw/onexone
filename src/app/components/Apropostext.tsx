@@ -30,38 +30,18 @@ const Apropostext = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section: À propos de nous */}
-        <div className="text-center mb-12">
-          <h3 className="text-4xl font-extrabold sm:text-5xl mb-6 text-orange-700">
-            À propos de nous
-          </h3>
-          <p className="text-lg text-white max-w-3xl mx-auto text-justify leading-relaxed">
-            Bienvenue chez{" "}
-            <span className="font-extrabold text-justify">
-              Équipe One X One
-            </span>
-            , plus qu'un simple gymnase, une communauté passionnée par la boxe,
-            la remise en forme et le dépassement de soi. Depuis notre création,
-            nous nous engageons à offrir un espace accueillant où les membres de
-            tous âges et niveaux peuvent se développer physiquement et
-            mentalement, grâce à la puissance de la boxe.
-          </p>
-        </div>
-
         {/* Section: Notre approche */}
         <div className="rounded-lg p-8 mb-16">
           <h3 className="text-4xl font-extrabold sm:text-5xl mb-6 text-orange-700 text-center">
             Notre approche
           </h3>
           <p className="text-lg text-white max-w-3xl mx-auto text-justify leading-relaxed">
-            Chez{" "}
-            <span className="font-extrabold text-justify">
-              Équipe One X One
-            </span>
-            , nous croyons que la boxe est bien plus qu'un sport : c'est un mode
-            de vie. Nous proposons des cours adaptés à tous les objectifs, qu'il
-            s'agisse de se mettre en forme, d'apprendre les techniques de base
-            ou de performer en compétition.
+            Chez <b>Équipe One X One</b>, nous croyons que la boxe est bien plus
+            qu'un simple entraînement physique: c'est un art martial et une
+            discipline de vie. Nous proposons des cours adaptés à tous les
+            niveaux, avec un accent particulier sur l'apprentissage des
+            techniques de base, le perfectionnement des mouvements et la
+            préparation aux compétitions.
           </p>
         </div>
 
@@ -76,12 +56,12 @@ const Apropostext = () => {
                 <i className="fas fa-chalkboard-teacher text-orange-700"></i>
               </div>
               <h4 className="text-xl font-bold text-white mb-2">
-                Coaching expert 👨‍🏫
+                Expert en coaching 👨‍🏫
               </h4>
               <p className="text-white text-justify leading-relaxed">
-                Des entraîneurs expérimentés et dévoués qui vous accompagnent à
-                chaque étape, en s'assurant que vous obtenez le meilleur de
-                vous-même.
+                Des entraîneurs expérimentés et passionnés vous transmettent les
+                techniques et les valeurs fondamentales de la boxe, en vous
+                accompagnant à chaque étape de votre progression.
               </p>
             </div>
             <div className="rounded-lg p-6 text-center transform transition-all duration-500">
@@ -89,12 +69,12 @@ const Apropostext = () => {
                 <i className="fas fa-hand-holding-heart text-orange-700"></i>
               </div>
               <h4 className="text-xl font-bold text-white mb-2">
-                Services complets 💆‍♂️
+                Services spécialisés 💆‍♂️
               </h4>
               <p className="text-white text-justify leading-relaxed">
-                En plus de la boxe, nous offrons des services comme le massage
-                thérapeutique et l'accompagnement physique pour un bien-être
-                global.
+                En complément de la pratique de la boxe, nous offrons des
+                services tels que le massage thérapeutique pour favoriser la
+                récupération et le bien-être global des athlètes.
               </p>
             </div>
             <div className="rounded-lg p-6 text-center transform transition-all duration-500">
@@ -105,8 +85,8 @@ const Apropostext = () => {
                 Esprit de communauté 🤝
               </h4>
               <p className="text-white text-justify leading-relaxed">
-                Nous sommes fiers d'avoir une ambiance familiale où le respect
-                et le soutien mutuel sont au cœur de nos activités.
+                Nous cultivons une ambiance familiale où le respect, la
+                discipline et la solidarité sont au cœur de nos activités.
               </p>
             </div>
           </div>
@@ -119,12 +99,15 @@ const Apropostext = () => {
           </h3>
           <p className="text-lg text-white max-w-3xl mx-auto text-justify leading-relaxed">
             Depuis plusieurs années, l'Équipe One X One s'efforce de devenir une
-            référence dans la boxe et la remise en forme. Notre objectif est
-            d'aider chacun de nos membres à atteindre son plein potentiel, qu'il
-            s'agisse de renforcer sa santé, d'apprendre une nouvelle discipline
-            ou de se surpasser dans un environnement motivant. Rejoignez-nous et
-            découvrez comment la boxe peut transformer votre vie, un tour à la
-            fois.
+            référence dans l'enseignement et la pratique de la boxe. Notre
+            objectif est d'aider chacun de nos membres à développer leurs
+            compétences pugilistiques et leur passion pour ce sport unique, tout
+            en les accompagnant vers l'atteinte de leurs objectifs personnels.
+            <br />
+            <br />
+            Rejoignez-nous et découvrez comment la boxe peut transformer votre
+            vie en vous apprenant la discipline, la technique et la
+            persévérance. fois.
           </p>
         </div>
       </div>

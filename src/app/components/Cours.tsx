@@ -17,7 +17,7 @@ const classes = [
     imageUrl: "enfant.jpg", // Assuming a new image for this class
   },
   {
-    name: "Gym libre",
+    name: "Accès libre",
     imageUrl: "libre.jpg",
   },
 ];

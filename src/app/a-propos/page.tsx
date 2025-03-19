@@ -11,7 +11,6 @@ const page = () => {
     <div className="bg-black">
       <Header />
       <APropos />
-      <AproposPhotos />
       <Apropostext />
       <Coachs />
     </div>

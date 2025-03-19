@@ -27,17 +27,17 @@ const APropos = () => {
             À propos de nous.
             <br />
             <strong className="font-extrabold text-orange-700 sm:block">
-              Plus qu'une salle de sport.
+              Plus qu'un gymnase, une école de boxe.
             </strong>
           </h1>
 
           <p className="mt-4 sm:text-xl text-justify px-4">
-            Bienvenue chez Équipe One X One , plus qu'un simple gymnase, une
-            communauté passionnée par la boxe, la remise en forme et le
-            dépassement de soi. Depuis notre création, nous nous engageons à
-            offrir un espace accueillant où les membres de tous âges et niveaux
-            peuvent se développer physiquement et mentalement, grâce à la
-            puissance de la boxe.
+            Bienvenue chez <b>Équipe One X One</b>, une communauté passionnée
+            par la boxe et l'apprentissage des techniques de ce sport
+            légendaire. Depuis notre création, nous nous engageons à offrir un
+            espace accueillant où les membres de tous âges et niveaux peuvent
+            découvrir, apprendre et perfectionner leur pratique de la boxe dans
+            un cadre stimulant et respectueux.
           </p>
         </div>
       </div>

@@ -1,51 +1,100 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Page = () => {
   return (
-    <div className="px-4 py-8 bg-black pt-16">
+    <div className="bg-black">
       <Header />
 
-      <div className="mt-8">
-        {/* Add the fade-in animation class here */}
-        <h1 className="text-3xl font-semibold text-center text-orange-700 animate-fade-in">
-          Événements et compétitions
-        </h1>
+      {/* Video Hero Section */}
+      <section className="relative bg-black h-screen flex items-center justify-center">
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/events.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
 
-        <p className="mt-4 text-lg text-center text-white animate-fade-in">
-          Rejoignez-nous pour des cours de boxe dynamiques et adaptés à tous les
-          niveaux !
-        </p>
-        <p className="mt-2 text-lg text-center text-white animate-fade-in">
-          Nous organisons régulièrement des événements, des galas et des
-          tournois pour nos boxeurs, et nous soutenons la communauté de la boxe
-          avec passion.
-        </p>
+        {/* Video Content */}
+        <div className="relative w-full mx-auto max-w-screen-xl px-4">
+          <div className="mx-auto max-w-3xl text-center text-white">
+            <h1 className="text-4xl font-extrabold sm:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400">
+              Événements & Compétitions
+            </h1>
+          </div>
+        </div>
+      </section>
 
-        <div className="mt-16 flex justify-center">
-          {/* Mobile iframe */}
-          <iframe
-            className="sm:hidden"
-            src="https://equipeonexone.fliipapp.com/api/web_integration/index/14bfa6bb14875e45bba028a21ed38046"
-            frameBorder="0"
-            allowFullScreen
-            style={{ height: "1700px", width: "100%", border: "none" }}
-          />
-          {/* Default (larger screen) iframe */}
-          <iframe
-            className="hidden sm:block"
-            src="https://equipeonexone.fliipapp.com/horaire/14bfa6bb14875e45bba028a21ed38046/DefaultRoom"
-            frameBorder="0"
-            allowFullScreen
-            style={{
-              height: "1200px",
-              width: "80%",
-              border: "none",
-              background: "black",
-            }}
-          />
+      {/* Content Section */}
+      <div className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="space-y-8">
+            <p className="text-xl text-gray-300 leading-relaxed animate-fade-in">
+              À l'Équipe One X One, nous organisons régulièrement des événements
+              excitants au gymnase pour permettre à notre équipe de compétition
+              de briller et offrir à tous nos membres l'opportunité de se
+              mesurer aux meilleurs athlètes locaux.
+            </p>
+
+            <div className="py-8">
+              <div className="h-1 w-24 mx-auto bg-gradient-to-r from-orange-600 to-amber-500 rounded-full"></div>
+            </div>
+
+            <p className="text-xl text-gray-300 leading-relaxed animate-fade-in">
+              Notre équipe voyage à travers le Québec pour participer aux plus
+              prestigieux tournois et galas de boxe, portant fièrement nos
+              couleurs et repoussant constamment les limites de l'excellence
+              sportive.
+            </p>
+
+            <p className="text-xl text-orange-500 font-semibold leading-relaxed animate-fade-in mt-12">
+              Rejoignez l'aventure et vivez l'intensité des combats aux côtés
+              d'une équipe passionnée!
+            </p>
+          </div>
+
+          {/* Schedule Section */}
+          <div className="mt-16 bg-gray-900 rounded-2xl p-8 shadow-2xl">
+            <h2 className="text-3xl font-bold text-orange-600 mb-8">
+              Calendrier des Événements
+            </h2>
+
+            <div className="rounded-xl overflow-hidden">
+              {/* Mobile iframe */}
+              <iframe
+                className="sm:hidden w-full"
+                src="https://equipeonexone.fliipapp.com/api/web_integration/index/14bfa6bb14875e45bba028a21ed38046"
+                frameBorder="0"
+                allowFullScreen
+                style={{ height: "800px", border: "none" }}
+              />
+
+              {/* Desktop iframe */}
+              <iframe
+                className="hidden sm:block w-full"
+                src="https://equipeonexone.fliipapp.com/horaire/14bfa6bb14875e45bba028a21ed38046/DefaultRoom"
+                frameBorder="0"
+                allowFullScreen
+                style={{
+                  height: "800px",
+                  border: "none",
+                  background: "black",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
