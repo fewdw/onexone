@@ -26,9 +26,7 @@ const Page = () => {
         {/* Video Content */}
         <div className="relative w-full mx-auto max-w-screen-xl px-4">
           <div className="mx-auto max-w-3xl text-center text-white">
-            <h1 className="text-4xl font-extrabold sm:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400">
-              Événements & Compétitions
-            </h1>
+            <h1 className="text-4xl font-extrabold sm:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400"></h1>
           </div>
         </div>
       </section>
@@ -49,15 +47,15 @@ const Page = () => {
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed animate-fade-in">
-              Notre équipe voyage à travers le Québec pour participer aux plus
-              prestigieux tournois et galas de boxe, portant fièrement nos
-              couleurs et repoussant constamment les limites de l'excellence
-              sportive.
+              Notre équipe de compétition voyage également à travers tout le
+              Québec pour participer à des tournois et des galas de boxe,
+              représentant fièrement nos couleurs et repoussant constamment no
+              limites.
             </p>
 
             <p className="text-xl text-orange-500 font-semibold leading-relaxed animate-fade-in mt-12">
-              Rejoignez l'aventure et vivez l'intensité des combats aux côtés
-              d'une équipe passionnée!
+              Rejoignez-nous pour faire partie de cette aventure sportive et
+              vivre l'intensité des combats aux côtés de notre équipe.
             </p>
           </div>
 
