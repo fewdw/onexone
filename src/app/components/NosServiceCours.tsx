@@ -66,7 +66,7 @@ const categories = [
           "Séances éducatives pour découvrir les bases de la boxe, développer coordination, discipline et confiance en soi dans un environnement sécurisé. ✦",
       },
     ],
-    image: "/gallery/10.jpg",
+    image: "enfant_new.jpeg",
   },
 ];
 

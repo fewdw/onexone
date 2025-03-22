@@ -14,7 +14,7 @@ const classes = [
   },
   {
     name: "Cours pour enfants",
-    imageUrl: "enfant.jpg",
+    imageUrl: "enfant_new.jpeg",
   },
   {
     name: "Accès libre",
