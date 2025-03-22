@@ -8,14 +8,18 @@ const Footer = () => {
     <footer className="bg-black border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center space-y-8">
-          {/* Logo with gradient hover effect */}
-          <Link href="/" className="group">
-            <img
-              src="/logo.jpeg"
-              alt="One X One Logo"
-              className="h-16 w-16 transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="mt-2 h-1 bg-gradient-to-r from-orange-600 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Logo container with proper rectangular sizing */}
+          <Link href="/" className="group relative">
+            <div className="h-24 w-48">
+              {" "}
+              {/* Adjust width/height ratio as needed */}
+              <img
+                src="/logo.jpeg"
+                alt="One X One Logo"
+                className="h-full w-full object-contain transform transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
 
           {/* Social links with modern hover effects */}
