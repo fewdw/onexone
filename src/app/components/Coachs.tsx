@@ -95,7 +95,7 @@ const Coachs = () => {
               <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500">
                 {coach.name}
               </h3>
-              <p className="text-gray-300 text-sm leading-tight">
+              <p className="text-green-50 text-sm leading-tight">
                 {coach.description}
               </p>
             </div>
