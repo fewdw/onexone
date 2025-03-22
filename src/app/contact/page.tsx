@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactInfo from "../components/ContactInfo";
@@ -10,88 +10,73 @@ const useIntersectionObserver = (
 ) => {
   const [isIntersecting, setIsIntersecting] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
     }, options);
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    ref.current && observer.observe(ref.current);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [ref, options]);
 
   return isIntersecting;
 };
 
 const ContactPage = () => {
-  const contactTitleRef = useRef<HTMLHeadingElement>(null);
-  const questionRef = useRef<HTMLHeadingElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
-
-  const isContactTitleVisible = useIntersectionObserver(contactTitleRef, {
-    threshold: 0.1,
-    rootMargin: "-100px 0px",
-  });
-
-  const isQuestionVisible = useIntersectionObserver(questionRef, {
-    threshold: 0.1,
-    rootMargin: "-100px 0px",
-  });
-
-  const isParagraphVisible = useIntersectionObserver(paragraphRef, {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isSectionVisible = useIntersectionObserver(sectionRef, {
     threshold: 0.1,
     rootMargin: "-100px 0px",
   });
 
   return (
-    <div>
+    <div className="bg-black">
       <Header />
 
-      <div className="bg-black text-white pt-16 pb-24">
-        {/* Contactez-Nous Title */}
+      <div ref={sectionRef} className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        {/* Main Title */}
         <h2
-          ref={contactTitleRef}
-          className={`text-4xl font-extrabold text-center text-orange-700 mb-8 pt-16 transition-opacity duration-700 ${
-            isContactTitleVisible ? "opacity-100" : "opacity-0"
+          className={`text-center text-5xl md:text-6xl font-bold mb-16 transition-all duration-700 ${
+            isSectionVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
-          Contactez-Nous
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-500">
+            Contactez-Nous
+          </span>
         </h2>
 
-        <section className="bg-gray-900 py-12">
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="text-center">
-              {/* Question Prompt Title */}
-              <h2
-                ref={questionRef}
-                className={`text-2xl font-bold text-white mb-6 transition-opacity duration-700 ${
-                  isQuestionVisible ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                Vous avez des questions? Contactez-nous dès maintenant!
-              </h2>
-
-              {/* Paragraph */}
-              <p
-                ref={paragraphRef}
-                className={`text-lg text-gray-400 max-w-3xl mx-auto transition-opacity duration-700 text-justify ${
-                  isParagraphVisible ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                Appelez-nous, envoyez-nous un message sur nos réseaux sociaux,
-                ou venez visiter notre salle de sport pour en savoir plus. Nous
-                serons ravis de vous aider avec toutes vos demandes.
-              </p>
-            </div>
+        {/* Contact Prompt Section */}
+        <div
+          className={`max-w-3xl mx-auto mb-24 transition-all duration-700 delay-150 ${
+            isSectionVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 sm:p-12 shadow-2xl border border-gray-800">
+            <h3 className="text-3xl font-semibold text-center mb-6 text-amber-100">
+              Vous avez des questions ?
+            </h3>
+            <p className="text-lg text-gray-300 text-center leading-relaxed">
+              Notre équipe est prête à répondre à toutes vos demandes.
+              Appelez-nous, envoyez un message via nos réseaux sociaux, ou
+              visitez notre salle de sport pour découvrir notre univers
+              pugilistique.
+            </p>
           </div>
-        </section>
+        </div>
 
         {/* Contact Info Section */}
-        <div className="mt-12">
+        <div
+          className={`transition-all duration-700 delay-300 ${
+            isSectionVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <ContactInfo />
         </div>
 
