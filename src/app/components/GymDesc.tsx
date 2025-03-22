@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useState, useRef } from "react";
 
 const GymDesc = () => {
@@ -35,23 +34,24 @@ const GymDesc = () => {
   }, [inView]);
 
   return (
-    <section ref={containerRef} className="pt-10">
-      <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <section ref={containerRef} className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {/* Text Content */}
           <div
             data-index="0"
-            className={`animated transform transition-all duration-500 ${
+            className={`animated relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-600 to-amber-500 p-8 md:p-12 lg:px-16 lg:py-20 transition-all duration-500 ${
               inView.has(0)
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            } bg-orange-700 p-8 md:p-12 lg:px-16 lg:py-24`}
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
           >
-            <div className="mx-auto max-w-xl text-center">
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
-                Vision
+            <div className="relative z-10 text-center">
+              <h2 className="text-3xl font-bold text-white md:text-4xl mb-6 bg-clip-text drop-shadow-lg">
+                Notre Vision
               </h2>
 
-              <p className="text-white/90 sm:mt-4 text-left">
+              <p className="text-lg text-white/90 mb-8 leading-relaxed text-justify">
                 Au One X One, nous croyons que la boxe transforme des vies.
                 Notre mission est d'offrir un espace inclusif où chacun, quel
                 que soit son âge ou son niveau, peut se dépasser, gagner en
@@ -60,40 +60,61 @@ const GymDesc = () => {
                 la boxe dans un environnement convivial et motivant.
               </p>
 
-              <div className="mt-4 md:mt-8">
-                <a
-                  href="https://equipeonexone.fliipapp.com/horaire?cal=1&language=FR"
-                  target="_blank"
-                  className="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-orange-700 transition focus:outline-none focus:ring focus:ring-yellow-400 hover:text-orange-800"
+              <a
+                href="https://equipeonexone.fliipapp.com/horaire?cal=1&language=FR"
+                target="_blank"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-orange-600 transition-all duration-300 hover:bg-gray-100 hover:text-orange-700 hover:scale-105 shadow-lg"
+              >
+                Voir le calendrier
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-2 h-4 w-4"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  Calendrier
-                </a>
-              </div>
+                  <path
+                    fillRule="evenodd"
+                    d="M6 2a1 1 0 011 1v1h4a1 1 0 110 2H7v1h4a1 1 0 110 2H7v1h4a1 1 0 110 2H7v1h4a1 1 0 110 2H7a1 1 0 01-1-1V3a1 1 0 011-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
-            <img
+          {/* Image Grid */}
+          <div className="grid grid-cols-2 gap-4 h-full">
+            <div
               data-index="1"
-              alt="Modern gym setup with equipment"
-              src="acceuil.jpg"
-              className={`animated h-40 w-full object-cover sm:h-56 md:h-full transform transition-all duration-500 ${
+              className={`animated relative overflow-hidden rounded-2xl transition-transform duration-500 ${
                 inView.has(1)
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
-            />
+            >
+              <img
+                alt="Modern gym setup with equipment"
+                src="acceuil.jpg"
+                className="h-full w-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+            </div>
 
-            <img
+            <div
               data-index="2"
-              alt="Gym facility showing advanced equipment"
-              src="vision1.jpg"
-              className={`animated h-40 w-full object-cover sm:h-56 md:h-full transform transition-all duration-500 ${
+              className={`animated relative overflow-hidden rounded-2xl transition-transform duration-500 ${
                 inView.has(2)
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
-            />
+            >
+              <img
+                alt="Gym facility showing advanced equipment"
+                src="vision1.jpg"
+                className="h-full w-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+            </div>
           </div>
         </div>
       </div>

@@ -173,61 +173,65 @@ const memberships = [
 
 const Abonnements = () => {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white">
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 bg-clip-text pt-16">
-        Nos Abonnements
-      </h2>
+    <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-500">
+          Nos Abonnements
+        </h2>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {memberships.map((membership, index) => (
-          <div
-            key={index}
-            className={`relative rounded-2xl p-8 shadow-2xl h-full flex flex-col justify-between transition-all duration-300 hover:scale-105 ${
-              membership.isPopular
-                ? "bg-gradient-to-b from-gray-800 via-gray-900 to-black border-2 border-orange-600"
-                : "bg-gray-900 border border-gray-800"
-            } hover:border-orange-500 overflow-hidden group`}
-          >
-            {membership.isPopular && (
-              <div className="absolute top-0 right-0 bg-orange-600 text-black px-6 py-1 text-sm font-bold skew-x-12 shadow-xl">
-                POPULAIRE
-              </div>
-            )}
-
-            <div className="space-y-4">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
-                {membership.name}
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {membership.description}
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {membership.options.map((option, optionIndex) => (
-                <div
-                  key={optionIndex}
-                  className="flex items-center justify-between"
-                >
-                  <div>
-                    <div className="text-4xl font-black text-orange-500">
-                      {option.price.toFixed(2)}$
-                    </div>
-                    <span className="text-sm text-gray-400">
-                      /{option.duration}
-                    </span>
-                  </div>
-                  <a
-                    href={option.link}
-                    className="py-2 px-4 bg-orange-600 hover:bg-orange-700 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-500 text-center"
-                  >
-                    Rejoindre
-                  </a>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {memberships.map((membership, index) => (
+            <div
+              key={index}
+              className={`relative rounded-2xl p-8 shadow-2xl transition-all duration-300 hover:scale-[1.02] group ${
+                membership.isPopular
+                  ? "bg-gradient-to-b from-gray-900 via-black to-gray-900 border-2 border-orange-500/40 hover:border-orange-500"
+                  : "bg-gray-900/50 border border-gray-800 hover:border-orange-500/40"
+              }`}
+            >
+              {membership.isPopular && (
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-600 to-amber-500 text-white px-6 py-2 text-sm font-bold rounded-full shadow-lg">
+                  LE PLUS POPULAIRE
                 </div>
-              ))}
+              )}
+
+              <div className="space-y-6 mt-4">
+                <div>
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400">
+                    {membership.name}
+                  </h3>
+                  <p className="mt-2 text-gray-300 text-sm">
+                    {membership.description}
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {membership.options.map((option, optionIndex) => (
+                    <div
+                      key={optionIndex}
+                      className="flex items-center justify-between p-4 bg-gray-800/20 rounded-xl"
+                    >
+                      <div>
+                        <div className="text-3xl font-bold text-amber-400">
+                          {option.price.toFixed(2)}$
+                        </div>
+                        <span className="text-sm text-gray-400">
+                          /{option.duration}
+                        </span>
+                      </div>
+                      <a
+                        href={option.link}
+                        className="px-5 py-2.5 bg-gradient-to-r from-orange-600 to-amber-500 text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20"
+                      >
+                        Rejoindre
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -122,6 +122,8 @@ const courses = [
   },
 ];
 
+("react");
+
 const CarteDeCours = () => {
   const [inView, setInView] = useState<Set<number>>(new Set());
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -139,11 +141,7 @@ const CarteDeCours = () => {
           }
         });
       },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
     const elements = containerRef.current?.querySelectorAll(".animated");
@@ -155,67 +153,80 @@ const CarteDeCours = () => {
   }, [inView]);
 
   return (
-    <div
-      ref={containerRef}
-      className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-black text-white"
-    >
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-orange-600 bg-clip-text pt-16">
-        Cartes de Cours
-      </h2>
+    <div ref={containerRef} className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-amber-500">
+          Cartes de Cours
+        </h2>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {courses.map((course, index) => (
-          <div
-            key={index}
-            data-index={index}
-            className={`animated rounded-2xl p-8 shadow-2xl flex flex-col justify-between transition-all duration-300 hover:scale-105 ${
-              course.isPopular
-                ? "bg-gradient-to-b from-gray-800 via-gray-900 to-black border-2 border-orange-600"
-                : "bg-gray-900 border border-gray-800"
-            } hover:border-orange-500 overflow-hidden group`}
-          >
-            {course.isPopular && (
-              <div className="absolute top-0 right-0 bg-orange-600 text-black px-6 py-1 text-sm font-bold skew-x-12 shadow-xl">
-                POPULAIRE
-              </div>
-            )}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {courses.map((course, index) => (
+            <div
+              key={index}
+              data-index={index}
+              className={`animated group relative bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 shadow-2xl transition-all duration-300 ${
+                inView.has(index)
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              } ${
+                course.isPopular
+                  ? "border-2 border-orange-500/30 hover:border-orange-500"
+                  : "border border-gray-800/50"
+              }`}
+            >
+              {course.isPopular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-600 to-amber-500 text-white px-6 py-2 text-sm font-bold rounded-full shadow-lg">
+                  POPULAIRE
+                </div>
+              )}
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
-                {course.name}
-              </h3>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-400">
+                  {course.name}
+                </h3>
 
-              <ul className="space-y-4">
-                {course.options.map((option, idx) => {
-                  return (
+                <ul className="space-y-4">
+                  {course.options.map((option, idx) => (
                     <li
                       key={idx}
-                      className="flex flex-col justify-between border-b border-gray-700 pb-4"
+                      className="flex justify-between items-center p-4 bg-gray-800/20 rounded-lg"
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="text-3xl font-black text-orange-500">
+                      <div>
+                        <div className="text-2xl font-bold text-amber-400">
                           {option.price.toFixed(2)}$
-                        </span>
+                        </div>
                         <span className="text-sm text-gray-400">
                           {option.count} cours
                         </span>
                       </div>
                     </li>
-                  );
-                })}
-              </ul>
-            </div>
+                  ))}
+                </ul>
 
-            {course.options.length > 0 && (
-              <a
-                href={course.options[0].link}
-                className="w-full py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-700 hover:to-amber-600 rounded-xl font-bold text-white transition-all transform hover:scale-[1.02] shadow-lg border border-orange-400 text-center"
-              >
-                Rejoindre Maintenant
-              </a>
-            )}
-          </div>
-        ))}
+                {course.options.length > 0 && (
+                  <a
+                    href={course.options[0].link}
+                    className="inline-flex w-full items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white font-semibold rounded-lg transition-transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20"
+                  >
+                    Rejoindre maintenant
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-2 h-4 w-4"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
