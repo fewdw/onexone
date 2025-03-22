@@ -1,28 +1,51 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactInfo from "../components/ContactInfo";
 
-const ContactPage = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const contactSectionRef = useRef<HTMLHeadingElement>(null);
-
-  // Check if the elements are in view (for scroll-triggered animations)
-  const handleScroll = () => {
-    if (contactSectionRef.current) {
-      const rect = contactSectionRef.current.getBoundingClientRect();
-      if (rect.top <= window.innerHeight * 0.9) {
-        setIsVisible(true);
-      }
-    }
-  };
+const useIntersectionObserver = (
+  ref: React.RefObject<Element>,
+  options?: IntersectionObserverInit
+) => {
+  const [isIntersecting, setIsIntersecting] = React.useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check visibility on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref, options]);
+
+  return isIntersecting;
+};
+
+const ContactPage = () => {
+  const contactTitleRef = useRef<HTMLHeadingElement>(null);
+  const questionRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+  const isContactTitleVisible = useIntersectionObserver(contactTitleRef, {
+    threshold: 0.1,
+    rootMargin: "-100px 0px",
+  });
+
+  const isQuestionVisible = useIntersectionObserver(questionRef, {
+    threshold: 0.1,
+    rootMargin: "-100px 0px",
+  });
+
+  const isParagraphVisible = useIntersectionObserver(paragraphRef, {
+    threshold: 0.1,
+    rootMargin: "-100px 0px",
+  });
 
   return (
     <div>
@@ -31,9 +54,9 @@ const ContactPage = () => {
       <div className="bg-black text-white pt-16 pb-24">
         {/* Contactez-Nous Title */}
         <h2
-          ref={contactSectionRef} // Using ref instead of id for the DOM element
-          className={`text-4xl font-extrabold text-center text-orange-700 mb-8 pt-16 opacity-0 transition-opacity duration-700 ${
-            isVisible ? "opacity-100" : "opacity-0"
+          ref={contactTitleRef}
+          className={`text-4xl font-extrabold text-center text-orange-700 mb-8 pt-16 transition-opacity duration-700 ${
+            isContactTitleVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           Contactez-Nous
@@ -44,8 +67,9 @@ const ContactPage = () => {
             <div className="text-center">
               {/* Question Prompt Title */}
               <h2
-                className={`text-2xl font-bold text-white mb-6 opacity-0 transition-opacity duration-700 ${
-                  isVisible ? "opacity-100" : "opacity-0"
+                ref={questionRef}
+                className={`text-2xl font-bold text-white mb-6 transition-opacity duration-700 ${
+                  isQuestionVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
                 Vous avez des questions? Contactez-nous dès maintenant!
@@ -53,8 +77,9 @@ const ContactPage = () => {
 
               {/* Paragraph */}
               <p
-                className={`text-lg text-gray-400 max-w-3xl mx-auto opacity-0 transition-opacity duration-700 text-justify ${
-                  isVisible ? "opacity-100" : "opacity-0"
+                ref={paragraphRef}
+                className={`text-lg text-gray-400 max-w-3xl mx-auto transition-opacity duration-700 text-justify ${
+                  isParagraphVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
                 Appelez-nous, envoyez-nous un message sur nos réseaux sociaux,
